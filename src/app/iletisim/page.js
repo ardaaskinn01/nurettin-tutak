@@ -31,26 +31,6 @@ export default function Iletisim() {
               </a>
             </li>
           </ul>
-
-          {/* Sosyal Medya İkonları */}
-          <div className="flex justify-center space-x-6 mt-6">
-            <a
-              href="https://www.instagram.com/ardaaskin_/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-purple-400 hover:text-purple-300 transition-all duration-300"
-            >
-              <FaInstagram className="w-8 h-8" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/arda-aşkın-7230261a7/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-purple-400 hover:text-purple-300 transition-all duration-300"
-            >
-              <FaLinkedin className="w-8 h-8" />
-            </a>
-          </div>
         </div>
       </div>
     </div>
