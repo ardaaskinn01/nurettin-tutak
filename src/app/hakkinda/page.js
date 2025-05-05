@@ -26,17 +26,8 @@ export default function Hakkinda() {
 
           {/* Hakkında Yazısı */}
           <div className="text-center md:text-left">
-            <h2 className="text-3xl font-bold text-purple-400 mb-4">Hakkımda</h2>
+            <h2 className="text-3xl font-bold text-purple-400 mb-4">Hakkında</h2>
             <p className="text-gray-300 leading-relaxed">
-              İzmir'de doğdum ve yaşıyorum. Lisans eğitimimi Manisa Celal Bayar
-              Üniversitesi'nde Yazılım Mühendisliği alanında gerçekleştirdim. Bu 4
-              yıl içinde Teknofest yarışmalarına katılım gösterdim ve Haziran
-              2022 - Ekim 2022 tarihlerinde Amerika Birleşik Devletleri'nde Work
-              & Travel yapma şansı yakaladım. Mezun olduğum tarihten itibaren
-              mobil uygulama geliştiriyorum. Yapay zeka ve robotik sistemlere
-              özel ilgim var. Aktif olarak freelance projelerde bulunuyorum.
-              2025/2026 eğitim öğretim yılında Bilgisayar Mühendisliği alanında
-              Yüksek Lisans’a başlayacağım.
             </p>
           </div>
         </div>
