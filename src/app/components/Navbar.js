@@ -2,6 +2,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";  // Image bileşenini import ettim
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -16,11 +17,14 @@ export default function Navbar() {
     <nav className="fixed w-full z-50 bg-green-600/90 backdrop-blur-md top-0 left-0 right-0 border-b border-green-700 shadow-lg">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          <Link 
-            href="/" 
-            className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-green-400 hover:from-white hover:to-green-500 transition-all duration-500"
-          >
-            Nurettin Tutak
+          {/* Logo */}
+          <Link href="/" className="text-2xl font-bold">
+            <Image
+              src="/nrtlogo2.png"  // Burada logo dosyasını belirtiyoruz
+              alt="Nurettin Tutak Logo"
+              width={120}  // İstediğiniz boyutu ayarlayabilirsiniz
+              height={27}  // İstediğiniz boyutu ayarlayabilirsiniz
+            />
           </Link>
 
           {/* Desktop Menü */}
