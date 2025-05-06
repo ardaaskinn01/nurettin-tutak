@@ -14,43 +14,26 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Nurettin Tutak | Flutter Geliştirici</title>
+        <title>Nurettin Tutak | Geçmişten Gelen Güç, Geleceğe Sağlam Adım</title>
         <meta name="description" content="Nurettin Tutak - Profesyonel Flutter Geliştirici" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
-      <div className="bg-gray-950 text-white min-h-screen flex flex-col">
+      <div className="bg-gradient-to-r from-green-500 to-green-700 text-white min-h-screen flex flex-col relative">
         <Navbar />
 
         {/* Hero Section */}
-        <section className="pt-32 md:pt-40 h-screen flex items-center justify-center text-center px-6">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-              Merhaba, Ben{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-green-400">
-                Nurettin
-              </span>
+        <section
+          className="pt-32 md:pt-40 h-screen flex items-center justify-center text-center px-6 bg-cover bg-center relative"
+          style={{ backgroundImage: "url('/background.jpg')" }}
+        >
+          <div className="absolute inset-0 bg-black opacity-50"></div> {/* Arka planın üzerine yarı saydam koyu bir katman ekledim */}
+          <div className="relative max-w-4xl mx-auto z-10">
+
+            {/* Slogan */}
+            <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight text-white mb-10">
+              Geçmişten Gelen Güç, <br /> Geleceğe Sağlam Adım
             </h1>
-
-            <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed">
-              Flutter uzmanı olarak, kullanıcı dostu ve yüksek performanslı mobil uygulamalar geliştiriyorum.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/cv.pdf"
-                download
-                className="px-8 py-4 bg-gradient-to-r from-orange-500 to-green-500 text-white rounded-lg hover:from-orange-600 hover:to-green-600 transition-all duration-500 shadow-lg font-medium"
-              >
-                CV İndir
-              </a>
-              <Link
-                href="/iletisim"
-                className="px-8 py-4 border-2 border-orange-400 text-orange-400 rounded-lg hover:bg-orange-400 hover:text-gray-900 transition-all duration-300 font-medium"
-              >
-                İletişime Geç
-              </Link>
-            </div>
 
             {/* Scroll Down Indicator */}
             <div
@@ -73,7 +56,7 @@ export default function Home() {
         <footer className="w-full bg-gray-900 py-16 border-t border-gray-700 mt-auto">
           <div className="max-w-6xl mx-auto px-6">
             <div className="flex flex-col items-center space-y-10">
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-green-400">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
                 İletişim Bilgileri
               </h2>
 
@@ -81,12 +64,12 @@ export default function Home() {
                 {/* E-posta */}
                 <div className="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
                   <div className="flex flex-col items-center text-center space-y-3">
-                    <svg className="w-8 h-8 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                     <h3 className="text-xl font-semibold">E-posta</h3>
-                    <a href="mailto:nurettintutak@gmail.com" className="text-gray-300 hover:text-orange-400">
-                      nurettintutak@gmail.com
+                    <a href="mailto:nurettintutak@gmail.com" className="text-gray-300 hover:text-green-400">
+                       nurettintutak@gmail.com
                     </a>
                   </div>
                 </div>
@@ -99,7 +82,7 @@ export default function Home() {
                     </svg>
                     <h3 className="text-xl font-semibold">Telefon</h3>
                     <a href="tel:+905555555555" className="text-gray-300 hover:text-green-400">
-                      +90 555 555 55 55
+                       +90 555 555 55 55
                     </a>
                   </div>
                 </div>

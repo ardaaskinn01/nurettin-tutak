@@ -21,13 +21,13 @@ export default function Iletisim() {
                 href="mailto:ardaaskindm@gmail.com"
                 className="hover:text-purple-400"
               >
-                ardaaskindm@gmail.com
+                
               </a>
             </li>
             <li>
               📞 Telefon:{" "}
               <a href="tel:+905532980081" className="hover:text-purple-400">
-                +90 553 298 00 81
+                
               </a>
             </li>
           </ul>

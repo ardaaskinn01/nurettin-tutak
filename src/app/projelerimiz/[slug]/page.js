@@ -6,7 +6,7 @@ import Navbar from "../../components/Navbar";
 
 // Proje verileri
 const projeler = [
-  {
+   {
     slug: "vizyonyoneticilik",
     baslik: "Vizyon Yöneticilik",
     resimler: [],

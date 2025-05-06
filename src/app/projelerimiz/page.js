@@ -6,8 +6,12 @@ export default function Projeler() {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("/projelerimiz/vizyonyoneticilik"); // İlk projeye yönlendir
+    router.push("/projelerimiz/proje1"); // İlk projeye yönlendir
   }, []);
 
-  return <div>Yönlendiriliyor...</div>;
+  return (
+    <div className="bg-green-500 w-full h-screen">
+      {/* Tamamen boş yeşil ekran */}
+    </div>
+  );
 }
