@@ -14,6 +14,16 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Nurettin Tutak Kişisel Web Sayfası",
   description: "Nurettin Tutak Kişisel Web Sayfası",
+  icons: {
+    icon: "/nrtlogo2.png", // Ana favicon
+    shortcut: "/nrtlogo2.png", // Kısayol ikonu
+    apple: "/nrtlogo2.png", // Apple cihazlar için
+    // Diğer boyutlar (opsiyonel)
+    other: {
+      rel: "nrtlogo2-touch-icon",
+      url: "/nrtlogo2.png",
+    },
+  },
 };
 
 export default function RootLayout({ children }) {
