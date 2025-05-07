@@ -11,10 +11,19 @@ export async function POST(req) {
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: process.env.SMTP_PORT,
+      secure: true,  // SSL/TLS bağlantısı
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
+    });
+
+    transporter.verify((error, success) => {
+      if (error) {
+        console.error("SMTP bağlantı hatası:", error);
+      } else {
+        console.log("SMTP bağlantısı başarılı");
+      }
     });
 
     const mailOptions = {
@@ -33,7 +42,9 @@ export async function POST(req) {
 
     return new Response("E-posta başarıyla gönderildi!", { status: 200 });
   } catch (error) {
-    console.error("Mail gönderme hatası:", error);
+    console.error("Mail gönderme hatası:", error.message);
+    console.error("Stack trace:", error.stack);
     return new Response("Mail gönderme başarısız", { status: 500 });
   }
 }
+ 
