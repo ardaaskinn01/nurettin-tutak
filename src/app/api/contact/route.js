@@ -18,6 +18,7 @@ export async function POST(req) {
       },
     });
 
+    // Bağlantıyı doğrulama
     transporter.verify((error, success) => {
       if (error) {
         console.error("SMTP bağlantı hatası:", error);
@@ -47,4 +48,3 @@ export async function POST(req) {
     return new Response("Mail gönderme başarısız", { status: 500 });
   }
 }
- 
