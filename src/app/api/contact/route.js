@@ -28,12 +28,11 @@ export async function POST(req) {
     });
 
     const mailOptions = {
-      from: process.env.SMTP_USER,
+      from: email,
       to: process.env.SMTP_USER,
       subject: `Yeni İletişim Formu: ${name}`,
       text: `
         İsim: ${name}
-        Email: ${email}
         Telefon: ${phone || "Belirtilmemiş"}
         Mesaj: ${message}
       `,

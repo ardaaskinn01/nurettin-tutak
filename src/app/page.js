@@ -29,8 +29,16 @@ export default function Home() {
         >
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div className="relative max-w-4xl mx-auto z-10">
-            <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight text-white mb-10">
-              Geçmişten Gelen Güç, <br /> Geleceğe Sağlam Adım
+            <h1 className="text-center mb-12 relative">
+              <span className="block text-4xl md:text-6xl font-medium text-white leading-tight mb-4">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-green-500">
+                  Geçmişten Gelen Güç
+                </span>
+              </span>
+              <span className="block text-5xl md:text-7xl font-bold text-white leading-tight">
+                Geleceğe Sağlam Adım
+              </span>
+              <div className="mt-6 mx-auto w-24 h-1 bg-gradient-to-r from-green-400 to-green-600"></div>
             </h1>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-10 font-light">
               50 yılı aşkın tecrübemizle inşaat sektöründe öncü çözümler sunuyoruz
