@@ -54,7 +54,7 @@ export default function Home() {
               </h2>
               <div className="mt-4 h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-8">
               {services.map((service, index) => (
                 <div
@@ -89,10 +89,10 @@ export default function Home() {
               {/* Sol Taraf - Fotoğraf */}
               <div className="relative rounded-xl overflow-hidden h-full min-h-[400px]">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
-                <img 
-                  src="/foto.jpg" 
-                  alt="Neden Bizi Seçmelisiniz" 
-                  className="object-cover w-full h-full transition-all duration-500 hover:scale-105" 
+                <img
+                  src="/foto.jpg"
+                  alt="Neden Bizi Seçmelisiniz"
+                  className="object-cover w-full h-full transition-all duration-500 hover:scale-105"
                 />
                 <div className="absolute bottom-0 left-0 p-8">
                 </div>
@@ -101,8 +101,8 @@ export default function Home() {
               {/* Sağ Taraf - Liste */}
               <div className="space-y-6">
                 {reasons.map((reason, index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className="group flex items-start bg-gray-900/50 p-6 rounded-lg border border-gray-800 hover:border-green-500 transition-all duration-300"
                   >
                     <div className="flex-shrink-0 mt-1">
@@ -126,46 +126,46 @@ export default function Home() {
         </section>
 
         {/* Kronoloji Bölümü */}
-<section className="py-24 relative bg-gray-900">
-  <div className="max-w-7xl mx-auto px-6">
-    <div className="text-center mb-20">
-      <span className="text-sm font-medium text-green-500 tracking-widest">TARİHÇEMİZ</span>
-      <h2 className="mt-2 text-3xl font-bold text-white">Yolculuğumuz</h2>
-      <div className="mt-4 h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
-    </div>
+        <section className="py-24 relative bg-gray-900">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-20">
+              <span className="text-sm font-medium text-green-500 tracking-widest">TARİHÇEMİZ</span>
+              <h2 className="mt-2 text-3xl font-bold text-white">Yolculuğumuz</h2>
+              <div className="mt-4 h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
+            </div>
 
-    <div className="relative">
-      {/* Çizgi */}
-      <div className="hidden md:block absolute left-1/2 h-full w-0.5 bg-gradient-to-b from-green-400 via-green-600 to-green-400"></div>
-      
-      <div className="space-y-12 md:space-y-0">
-        {timeline.map((item, index) => (
-          <div 
-            key={index} 
-            className={`relative flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
-          >
-            {/* İçerik */}
-            <div className={`md:w-1/2 p-8 ${index % 2 === 0 ? 'md:pr-16 md:text-right' : 'md:pl-16 md:text-left'}`}>
-              <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-green-500 transition-all duration-300">
-                <p className="text-green-400 text-sm font-medium mb-2">{item.year}</p>
-                <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
-                <p className="text-gray-400 text-sm font-light">{item.description}</p>
+            <div className="relative">
+              {/* Çizgi */}
+              <div className="hidden md:block absolute left-1/2 h-full w-0.5 bg-gradient-to-b from-green-400 via-green-600 to-green-400"></div>
+
+              <div className="space-y-12 md:space-y-0">
+                {timeline.map((item, index) => (
+                  <div
+                    key={index}
+                    className={`relative flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+                  >
+                    {/* İçerik */}
+                    <div className={`md:w-1/2 p-8 ${index % 2 === 0 ? 'md:pr-16 md:text-right' : 'md:pl-16 md:text-left'}`}>
+                      <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-green-500 transition-all duration-300">
+                        <p className="text-green-400 text-sm font-medium mb-2">{item.year}</p>
+                        <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
+                        <p className="text-gray-400 text-sm font-light">{item.description}</p>
+                      </div>
+                    </div>
+
+                    {/* Nokta */}
+                    <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-green-500 border-4 border-gray-900 z-10 items-center justify-center">
+                      <div className="w-2 h-2 rounded-full bg-white"></div>
+                    </div>
+
+                    {/* Boş Alan */}
+                    <div className="md:w-1/2"></div>
+                  </div>
+                ))}
               </div>
             </div>
-            
-            {/* Nokta */}
-            <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-green-500 border-4 border-gray-900 z-10 items-center justify-center">
-              <div className="w-2 h-2 rounded-full bg-white"></div>
-            </div>
-            
-            {/* Boş Alan */}
-            <div className="md:w-1/2"></div>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+        </section>
 
 
 
