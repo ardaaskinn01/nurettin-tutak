@@ -19,16 +19,29 @@ export default function Iletisim() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form gönderildi:", formData);
-    alert("Mesajınız gönderildi!");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: ""
-    });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert("Mesajınız başarıyla gönderildi!");
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        const errorMessage = await response.text();
+        alert(`Hata: ${errorMessage}`);
+      }
+    } catch (error) {
+      console.error("İstek gönderme hatası:", error);
+      alert("Bir hata oluştu, lütfen tekrar deneyin.");
+    }
   };
 
   return (
@@ -46,7 +59,7 @@ export default function Iletisim() {
         <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>
 
-      <div className="flex-grow py-16 px-4 sm:px-6 lg:px-8 relative z-10"> 
+      <div className="flex-grow py-16 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 mt-8">
             <h1 className="text-4xl font-bold text-green-300 mb-4">BİZE ULAŞIN</h1>
