@@ -42,6 +42,12 @@ export default function Navbar() {
               Hakkında
             </Link>
             <Link 
+              href="/kurumsal" 
+              className={`px-4 py-2 text-lg ${getLinkClass("/kurumsal")}`}
+            >
+              Kurumsal
+            </Link>
+            <Link 
               href="/projelerimiz" 
               className={`px-4 py-2 text-lg ${getLinkClass("/projelerimiz")}`}
             >
@@ -92,11 +98,18 @@ export default function Navbar() {
                 Hakkında
               </Link>
               <Link 
+                href="/kurumsal" 
+                className={`block px-4 py-3 rounded-lg text-lg ${getLinkClass("/kurumsal")} hover:bg-green-700/50 transition-colors`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Kurumsal
+              </Link>
+              <Link 
                 href="/projelerimiz" 
                 className={`block px-4 py-3 rounded-lg text-lg ${getLinkClass("/projelerimiz")} hover:bg-green-700/50 transition-colors`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Projelerim
+                Projelerimiz
               </Link>
               <Link 
                 href="/iletisim" 

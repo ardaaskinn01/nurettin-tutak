@@ -95,7 +95,7 @@ export default function Hakkinda() {
                   className="object-cover w-full h-full"
                 />
               </div>
-              <h3 className="text-lg font-semibold text-white">Nurettin Tutak</h3>
+              <h3 className="text-lg font-semibold text-white">Hasan Tutak</h3>
             </div>
 
             {/* Hasan */}
@@ -109,7 +109,7 @@ export default function Hakkinda() {
                   className="object-cover w-full h-full"
                 />
               </div>
-              <h3 className="text-lg font-semibold text-white">Hasan Tutak</h3>
+              <h3 className="text-lg font-semibold text-white">Nurettin Tutak</h3>
             </div>
           </div>
         </div>

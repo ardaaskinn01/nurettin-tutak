@@ -83,47 +83,45 @@ export default function Home() {
         </section>
 
         {/* Neden Bizi Seçmelisiniz Section */}
-        <section className="py-24 relative bg-gray-950">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-20">
-              <span className="text-sm font-medium text-green-500 tracking-widest">AVANTAJLARIMIZ</span>
-              <h2 className="mt-2 text-3xl font-bold text-white">
+        <section className="py-16 relative bg-gray-950">
+          <div className="max-w-5xl mx-auto px-4">
+            <div className="text-center mb-12">
+              <span className="text-xs font-medium text-green-400 tracking-widest">AVANTAJLARIMIZ</span>
+              <h2 className="mt-1 text-2xl font-semibold text-white">
                 Neden Bizi Seçmelisiniz?
               </h2>
-              <div className="mt-4 h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
+              <div className="mt-3 h-0.5 w-16 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
               {/* Sol Taraf - Fotoğraf */}
-              <div className="relative rounded-xl overflow-hidden h-full min-h-[400px]">
+              <div className="relative rounded-lg overflow-hidden h-full min-h-[300px]">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
                 <img
                   src="/foto.jpg"
                   alt="Neden Bizi Seçmelisiniz"
-                  className="object-cover w-full h-full transition-all duration-500 hover:scale-105"
+                  className="object-cover w-full h-full transition-transform duration-300 hover:scale-103"
                 />
-                <div className="absolute bottom-0 left-0 p-8">
-                </div>
               </div>
 
               {/* Sağ Taraf - Liste */}
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {reasons.map((reason, index) => (
                   <div
                     key={index}
-                    className="group flex items-start bg-gray-900/50 p-6 rounded-lg border border-gray-800 hover:border-green-500 transition-all duration-300"
+                    className="group flex items-start bg-gray-800 p-4 rounded-md border border-gray-700 hover:border-green-400 transition-all duration-200"
                   >
-                    <div className="flex-shrink-0 mt-1">
-                      <div className="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
-                        <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex-shrink-0 mt-0.5">
+                      <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
+                        <svg className="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
                     </div>
-                    <div className="ml-4">
-                      <h3 className="text-lg font-medium text-white">{reason.title}</h3>
+                    <div className="ml-3">
+                      <h3 className="text-base font-medium text-white">{reason.title}</h3>
                       {reason.description && (
-                        <p className="mt-1 text-sm text-gray-400 font-light">{reason.description}</p>
+                        <p className="mt-0.5 text-xs text-gray-400 font-light">{reason.description}</p>
                       )}
                     </div>
                   </div>
@@ -133,36 +131,37 @@ export default function Home() {
           </div>
         </section>
 
+
         {/* Kronoloji Bölümü */}
-        <section className="py-24 relative bg-gray-900">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-20">
-              <span className="text-sm font-medium text-green-500 tracking-widest">TARİHÇEMİZ</span>
-              <h2 className="mt-2 text-3xl font-bold text-white">Yolculuğumuz</h2>
-              <div className="mt-4 h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
+        <section className="py-16 relative bg-gray-900">
+          <div className="max-w-5xl mx-auto px-4">
+            <div className="text-center mb-12">
+              <span className="text-xs font-medium text-green-400 tracking-widest">TARİHÇEMİZ</span>
+              <h2 className="mt-2 text-2xl font-semibold text-white">Yolculuğumuz</h2>
+              <div className="mt-3 h-0.5 w-16 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
             </div>
 
             <div className="relative">
               {/* Çizgi */}
               <div className="hidden md:block absolute left-1/2 h-full w-0.5 bg-gradient-to-b from-green-400 via-green-600 to-green-400"></div>
 
-              <div className="space-y-12 md:space-y-0">
+              <div className="space-y-8 md:space-y-0">
                 {timeline.map((item, index) => (
                   <div
                     key={index}
                     className={`relative flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
                   >
                     {/* İçerik */}
-                    <div className={`md:w-1/2 p-8 ${index % 2 === 0 ? 'md:pr-16 md:text-right' : 'md:pl-16 md:text-left'}`}>
-                      <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-green-500 transition-all duration-300">
-                        <p className="text-green-400 text-sm font-medium mb-2">{item.year}</p>
-                        <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
-                        <p className="text-gray-400 text-sm font-light">{item.description}</p>
+                    <div className={`md:w-1/2 p-6 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'}`}>
+                      <div className="bg-gray-800/60 p-5 rounded-lg border border-gray-700 hover:border-green-400 transition-all duration-200">
+                        <p className="text-green-400 text-sm font-medium mb-1">{item.year}</p>
+                        <h3 className="text-lg font-semibold text-white mb-1">{item.title}</h3>
+                        <p className="text-gray-400 text-xs font-light">{item.description}</p>
                       </div>
                     </div>
 
                     {/* Nokta */}
-                    <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-green-500 border-4 border-gray-900 z-10 items-center justify-center">
+                    <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-green-500 border-2 border-gray-900 z-10 items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-white"></div>
                     </div>
 
@@ -174,8 +173,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-
 
         {/* Footer */}
         <footer className="w-full py-20 bg-gray-900 border-t border-gray-800">
