@@ -10,7 +10,7 @@ export default function Nazilli() {
         { title: "Ocaklı", link: "/projelerimiz/nazilli/ocakli" },
         { title: "Pamukören", link: "/projelerimiz/nazilli/pamukoren" },
         { title: "Dualar", link: "/projelerimiz/nazilli/dualar" },
-        { title: "Hamidiye", link: "/projelerimiz/nazilli/hamidiye" },
+        { title: "HamİDİye", link: "/projelerimiz/nazilli/hamidiye" },
     ];
 
     return (
