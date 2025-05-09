@@ -16,9 +16,9 @@ export const metadata = {
   title: "Nurettin Tutak Kişisel Web Sayfası",
   description: "Nurettin Tutak Kişisel Web Sayfası",
   icons: {
-    icon: "/nrtlogo2.png",
-    shortcut: "/nrtlogo2.png",
-    apple: "/nrtlogo2.png",
+    icon: "/nrtlogo.png",
+    shortcut: "/nrtlogo.png",
+    apple: "/nrtlogo.png",
   },
 };
 
@@ -26,9 +26,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <link rel="icon" href="/nrtlogo2.png" sizes="32x32" />
-        <link rel="icon" href="/nrtlogo2.png" sizes="16x16" />
-        <link rel="apple-touch-icon" href="/nrtlogo2.png" />
+        <link rel="icon" href="/nrtlogo.png" sizes="32x32" />
+        <link rel="icon" href="/nrtlogo.png" sizes="16x16" />
+        <link rel="apple-touch-icon" href="/nrtlogo.png" />
         <link rel="manifest" href="/manifest.json" />
       </Head>
       <body>
