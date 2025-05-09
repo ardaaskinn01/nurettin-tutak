@@ -102,7 +102,7 @@ export default function Navbar() {
                 className={`block px-4 py-3 rounded-lg text-lg ${getLinkClass("/kurumsal")} hover:bg-green-700/50 transition-colors`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Kurumsal
+                Üretim Tesisimiz
               </Link>
               <Link 
                 href="/projelerimiz" 
