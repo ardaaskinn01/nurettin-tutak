@@ -26,7 +26,7 @@ export default function Ocakli() {
             <div className="pt-24 pb-16">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-12">
-                        <p className="text-gray-400 mt-2 text-sm">PRESTİJ SİTESİ</p>
+                        <p className="text-gray-400 mt-2 text-sm">PRESTİJ PARK SİTESİ</p>
                         <div className="mt-3 h-1 w-16 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
                     </div>
 

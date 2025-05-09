@@ -13,8 +13,8 @@ export default function Tavsanli() {
     { title: "Davutlar Konutu", link: "/projelerimiz/tavsanli/davutlar" },
     { title: "Demİrbey Vİllaları", link: "/projelerimiz/tavsanli/demirbey" },
     { title: "Emİrgan Sİtesİ", link: "/projelerimiz/tavsanli/emirgan" },
-    { title: "KG Yapı", link: "/projelerimiz/tavsanli/kgyapı" },
-    { title: "Prestİj Park", link: "/projelerimiz/tavsanli/prestij" },
+    { title: "KG Yapı", link: "/projelerimiz/tavsanli/kgyapi" },
+    { title: "Prestİj Park SİTESİ", link: "/projelerimiz/tavsanli/prestij" },
     { title: "Tepe Huzur Sİtesİ", link: "/projelerimiz/tavsanli/tepehuzur" },
     { title: "Tepe Lİfe Sİtesİ", link: "/projelerimiz/tavsanli/tepelife" },
     { title: "Tepe Park Sİtesİ", link: "/projelerimiz/tavsanli/tepepark" },
@@ -32,8 +32,7 @@ export default function Tavsanli() {
     <div className="relative min-h-screen">
       <Navbar />
 
-      {/* Geri tuşu */}
-      <div className="fixed top-30 left-6 z-10">
+     <div className="fixed top-36 left-6 z-10">
         <button
           onClick={() => router.back()}
           className="bg-orange-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-orange-600"
