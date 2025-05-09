@@ -45,7 +45,7 @@ export default function Navbar() {
               href="/kurumsal" 
               className={`px-4 py-2 text-lg ${getLinkClass("/kurumsal")}`}
             >
-              Kurumsal
+              Üretim Tesisimiz
             </Link>
             <Link 
               href="/projelerimiz" 
