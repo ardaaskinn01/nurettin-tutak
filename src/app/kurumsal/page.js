@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import Image from "next/image";
 
 export default function Kurumsal() {
-  const images = Array.from({ length: 12 }, (_, i) => `/fabrika/${i + 1}.jpg`);
+  const images = Array.from({ length: 13 }, (_, i) => `/fabrika/${i}.jpg`);
   const [selectedImage, setSelectedImage] = useState(null);
 
   const closeModal = () => setSelectedImage(null);
@@ -18,10 +18,10 @@ export default function Kurumsal() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-semibold uppercase text-white">
-               Gedİz / Kütahya Üretİm TesİSİMİZ
+               Üretİm TesİSİMİZ
             </h2>
-            <p className="text-gray-400 mt-2 text-sm">
-              PVC
+            <p className="text-gray-400 mt-2 uppercase text-sm">
+              Gedİz / Kütahya 
             </p>
             <div className="mt-3 h-1 w-16 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
           </div>
@@ -35,7 +35,7 @@ export default function Kurumsal() {
               >
                 <Image
                   src={src}
-                  alt={`Fabrika Görseli ${index + 1}`}
+                  alt={`Fabrika Görseli ${index}`}
                   layout="fill"
                   objectFit="cover"
                   className="transition-transform duration-300 group-hover:scale-105"
