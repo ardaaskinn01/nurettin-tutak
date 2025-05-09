@@ -13,20 +13,22 @@ export default function Projeler() {
     <div className="relative min-h-screen">
       {/* Arka plan resmini bulanıklaştırdık */}
       <Navbar />
-      <Image
-        src="/bg.jpg"
-        alt="background"
-        fill
-        className="object-cover blur-[4px]"
-        priority
-      />
-      {/* Arka planı daha koyu hale getirdik */}
-      <div className="absolute inset-0 bg-black opacity-70">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-semibold text-white">Projelerim</h2>
-            <div className="mt-3 h-1 w-16 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
-          </div>
+      {/* Arkaplan */}
+            <div
+                className="absolute inset-0 bg-cover bg-fixed bg-center"
+                style={{
+                    backgroundImage: "url('/bg.jpg')",
+                }}
+            />
+
+            {/* Arkaplan karartması */}
+            <div className="absolute inset-0 bg-black opacity-70" />
+
+            <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-12">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl font-semibold text-white">KONUMLAR</h2>
+                    <div className="mt-3 h-1 w-16 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
+                </div>
 
           {/* Cardlar alt alta ve geniş dikdörtgen yapıldı */}
           <div className="flex flex-col items-center gap-12">
@@ -34,7 +36,7 @@ export default function Projeler() {
               <Link
                 href={project.link}
                 key={index}
-                className="group relative overflow-hidden rounded-lg border-l-4 border-orange-500 w-full max-w-2xl h-36 bg-white bg-opacity-90 transition-transform duration-300 hover:scale-160 shadow-xl"
+                className="group relative overflow-hidden rounded-lg border-l-4 border-orange-500 w-full max-w-2xl h-36 bg-white bg-opacity-80 transition-transform duration-300 hover:scale-160 shadow-xl"
               >
                 <div className="text-center flex items-center justify-center h-full">
                   <span className="text-orange-500 text-xl uppercase font-semibold">
@@ -46,6 +48,5 @@ export default function Projeler() {
           </div>
         </div>
       </div>
-    </div>
   );
 }
