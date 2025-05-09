@@ -286,14 +286,14 @@ const timeline = [
     description: "Hasan Tutak tarafından teknik demir doğrama atölyesi olarak kuruldu."
   },
   {
-    year: "1985",
+    year: "1990",
     title: "İlk Büyük Proje",
-    description: "Nazilli'de ilk büyük ölçekli inşaat projesini tamamladık."
+    description: "PVC ve alüminyum sektöründe kendini geliştirerek yer aldı."
   },
   {
     year: "1992",
     title: "Şirketleşme",
-    description: "Tutakoğulları Sanayi ve Ticaret Ltd. Şti. adıyla resmiyet kazandık."
+    description: "Tutakoğulları Sanayi ve Ticaret Ltd. Şti. adıyla resmiyet kazanıldı"
   },
   {
     year: "2005",
@@ -303,16 +303,16 @@ const timeline = [
   {
     year: "2018",
     title: "NRT Grup Kuruluşu",
-    description: "NRT Grup İnşaat A.Ş. olarak yapılanmamızı güçlendirdik."
+    description: "NRT Grup İnşaat A.Ş. olarak yapılanma güçlendirildi."
   },
   {
     year: "2023",
     title: "90 Villalık Proje",
-    description: "Aydın Nazilli'de 90 villalık lüks konut projesine başladık."
+    description: "Aydın Nazilli'de 90 villalık lüks konut projesine başlandı."
   },
   {
     year: "2025",
     title: "Yeni Hedefler",
-    description: "Kütahya Gediz'de yeni üretim tesisi ve uluslararası projeler planlanıyor."
+    description: "Kütahya Gediz'de yeni üretim tesisi ve uluslararası projeler planlanmaktadır."
   }
 ];
