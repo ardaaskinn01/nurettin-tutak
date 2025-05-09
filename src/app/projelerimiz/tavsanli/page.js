@@ -33,7 +33,7 @@ export default function Tavsanli() {
       <Navbar />
 
       {/* Geri tuşu */}
-      <div className="absolute top-24 left-6 z-10">
+      <div className="fixed top-30 left-6 z-10">
         <button
           onClick={() => router.back()}
           className="bg-orange-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-orange-600"
@@ -44,10 +44,16 @@ export default function Tavsanli() {
 
       {/* Arkaplan */}
       <div
-        className="absolute inset-0 bg-[url('/bg.jpg')] bg-repeat bg-[size:contain] opacity-70"
+        className="absolute inset-0 bg-cover bg-fixed bg-center"
+        style={{
+          backgroundImage: "url('/bg.jpg')",
+        }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      {/* Arkaplan karartması */}
+      <div className="absolute inset-0 bg-black opacity-70" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-12">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-semibold text-white">Tavşanlı - Kütahya</h2>
           <div className="mt-3 h-1 w-16 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
@@ -59,7 +65,7 @@ export default function Tavsanli() {
             <Link
               href={project.link}
               key={index}
-              className="group relative overflow-hidden rounded-lg border-l-4 border-orange-500 h-24 bg-white bg-opacity-90 transition-transform duration-300 hover:scale-105 shadow-xl"
+              className="group relative overflow-hidden rounded-lg border-l-4 border-orange-500 h-24 bg-white bg-opacity-80 transition-transform duration-300 hover:scale-105 shadow-xl"
             >
               <div className="text-center flex items-center justify-center h-full">
                 <span className="text-orange-500 text-lg uppercase font-semibold">
