@@ -64,7 +64,7 @@ export default function Hakkinda() {
             <div className="bg-gray-800/80 p-8 rounded-3xl shadow-lg border-t-4 border-green-500 backdrop-blur-sm">
               <h2 className="text-2xl font-bold text-white mb-4">Geleceğe Yönelik Vizyonumuz</h2>
               <p className="text-base text-white leading-7">
-                Tutak ailesi olarak geçmişten aldığımız güçle geleceğe emin adımlarla ilerliyoruz. 2025 yılı hedeflerimiz arasında, Kütahya Gediz Organize Sanayi Bölgesi'nde kurulacak olan yeni üretim tesisimizle üretim alanımızı 50.000 m²'ye çıkarmak ve bisiklet/otomobil parçaları üretiminde yurt dışı yatırımlarla büyümek yer almaktadır.
+                NRT Grup A.Ş. olarak geçmişten aldığımız güçle geleceğe emin adımlarla ilerliyoruz. 2025 yılı hedeflerimiz arasında, Kütahya Gediz Organize Sanayi Bölgesi'nde kurulacak olan yeni üretim tesisimizle üretim alanımızı 50.000 m²'ye çıkarmak ve bisiklet/otomobil parçaları üretiminde yurt dışı yatırımlarla büyümek yer almaktadır.
               </p>
             </div>
           </div>
