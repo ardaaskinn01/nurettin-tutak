@@ -37,7 +37,7 @@ export default function Nazilli() {
                 {/* Arkaplan karartması */}
                 <div className="absolute inset-0 bg-black opacity-70" />
     
-                <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-12">
+                <div className="relative z-10 max-w-7xl mx-auto px-6 pt-36 pb-12">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-semibold text-white">NAZİLLİ / AYDIN</h2>
                         <div className="mt-3 h-1 w-16 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
