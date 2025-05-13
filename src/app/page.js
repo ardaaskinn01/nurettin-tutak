@@ -6,42 +6,47 @@ import CountUp from 'react-countup';
 import { useRef } from 'react';
 import { useState, useEffect } from 'react';
 
-const useSectionAnimation = () => {
+
+const useSectionAnimation = (setStartCountUp) => { // setStartCountUp parametre olarak eklendi
   const sectionRefs = useRef([]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fadeInUp');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      }
-    );
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('opacity-0', 'translate-y-10');
+          entry.target.classList.add('opacity-100', 'translate-y-0');
 
-    sectionRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
+          // Stats section için CountUp animasyonlarını tetikle
+          if (entry.target.classList.contains('stats-section')) {
+            setStartCountUp(true); // Artık burada erişilebilir
+            const counters = entry.target.querySelectorAll('.count-up-trigger');
+            counters.forEach(counter => {
+              counter.classList.add('animate-fadeInUp');
+            });
+          }
+        }
+      });
+    }, { threshold: 0.3 });
+
+    sectionRefs.current.forEach((section) => {
+      if (section) observer.observe(section);
     });
 
     return () => {
-      sectionRefs.current.forEach((ref) => {
-        if (ref) observer.unobserve(ref);
+      sectionRefs.current.forEach((section) => {
+        if (section) observer.unobserve(section);
       });
     };
-  }, []);
+  }, [setStartCountUp]); // setStartCountUp dependency olarak eklendi
 
   return sectionRefs;
 };
 
 export default function Home() {
+  const [startCountUp, setStartCountUp] = useState(false);
   const sectionRef = useRef(null);
-  const sectionRefs = useSectionAnimation();
+  const sectionRefs = useSectionAnimation(setStartCountUp);
   const [currentBg, setCurrentBg] = useState(0);
   const [animatedText1, setAnimatedText1] = useState("");
   const [animatedText2, setAnimatedText2] = useState("");
@@ -351,28 +356,27 @@ export default function Home() {
         </section>
 
         <section
-          ref={sectionRef}
-          className="py-16 bg-gradient-to-b from-gray-950 to-gray-900 opacity-0 translate-y-10 transition-all duration-500"
-        >
-          <div className="max-w-5xl mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-
-              {/* 50+ Yıl */}
-              <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg border border-gray-600 hover:border-green-400 transition duration-300 animate-fadeInUp">
-                <div className="mb-4 bg-green-500/20 p-3 rounded-full">
-                  <svg className="w-8 h-8 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M12 2a10 10 0 1 1-10 10A10 10 0 0 1 12 2z" />
-                    <path d="M12 6v6l4 2" />
-                  </svg>
-                </div>
-                <div className="text-4xl font-bold text-green-400 mb-2">
-                  <CountUp end={50} duration={3} suffix="+" />
-                </div>
-                <p className="text-sm font-light text-gray-300">Yıllık Deneyim</p>
+        ref={(el) => sectionRefs.current[2] = el}
+        className="py-16 bg-gradient-to-b from-gray-950 to-gray-900 opacity-0 translate-y-10 transition-all duration-500 stats-section"
+      >
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            {/* 50+ Yıl */}
+            <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg border border-gray-600 hover:border-green-400 transition duration-300 count-up-trigger opacity-0">
+              <div className="mb-4 bg-green-500/20 p-3 rounded-full">
+                <svg className="w-8 h-8 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M12 2a10 10 0 1 1-10 10A10 10 0 0 1 12 2z" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
               </div>
+              <div className="text-4xl font-bold text-green-400 mb-2">
+                {startCountUp && <CountUp end={50} duration={3} suffix="+" />}
+              </div>
+              <p className="text-sm font-light text-gray-300">Yıllık Deneyim</p>
+            </div>
 
               {/* 200+ Bina */}
-              <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg border border-gray-600 hover:border-green-400 transition duration-300 animate-fadeInUp">
+              <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg border border-gray-600 hover:border-green-400 transition duration-300 count-up-trigger opacity-0">
                 <div className="mb-4 bg-blue-500/20 p-3 rounded-full">
                   <svg className="w-8 h-8 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                     <path d="M3 21h18" />
@@ -383,13 +387,13 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="text-4xl font-bold text-blue-400 mb-2">
-                  <CountUp end={200} duration={3} suffix="+" />
+                  {startCountUp && <CountUp end={50} duration={3} suffix="+" />}
                 </div>
                 <p className="text-sm font-light text-gray-300">Tamamlanan Bina</p>
               </div>
 
               {/* 90+ Villa */}
-              <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg border border-gray-600 hover:border-green-400 transition duration-300 animate-fadeInUp">
+              <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg border border-gray-600 hover:border-green-400 transition duration-300 count-up-trigger opacity-0">
                 <div className="mb-4 bg-purple-500/20 p-3 rounded-full">
                   <svg className="w-8 h-8 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                     <path d="M12 2l7 7-7 7-7-7z" />
@@ -397,13 +401,13 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="text-4xl font-bold text-purple-400 mb-2">
-                  <CountUp end={90} duration={3} suffix="+" />
+                  {startCountUp && <CountUp end={90} duration={3} suffix="+" />}
                 </div>
                 <p className="text-sm font-light text-gray-300">Lüks Villa</p>
               </div>
 
               {/* 10+ Proje */}
-              <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg border border-gray-600 hover:border-green-400 transition duration-300 animate-fadeInUp">
+              <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg border border-gray-600 hover:border-green-400 transition duration-300 count-up-trigger opacity-0">
                 <div className="mb-4 bg-red-500/20 p-3 rounded-full">
                   <svg className="w-8 h-8 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                     <path d="M3 12h18" />
@@ -412,7 +416,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="text-4xl font-bold text-red-400 mb-2">
-                  <CountUp end={10} duration={3} suffix="+" />
+                  {startCountUp && <CountUp end={10} duration={3} suffix="+" />}
                 </div>
                 <p className="text-sm font-light text-gray-300">Devam Eden Proje</p>
               </div>
@@ -432,11 +436,11 @@ export default function Home() {
               alt="Arkaplan"
               className="w-full h-full object-cover opacity-70"
             />
-            <div className="absolute inset-0 bg-black/40"></div>
+            <div className="absolute inset-0 bg-black/55"></div>
           </div>
 
           <div className="w-full pl-8 relative z-10">
-            <div className="text-left mb-12">
+            <div className="text-left mb-12"><CountUp end={50} duration={3} suffix="+" start={0} />
               <span className="text-xs font-medium text-green-400 tracking-widest">TARİHÇEMİZ</span>
               <h2 className="mt-2 text-2xl font-semibold text-white">Yolculuğumuz</h2>
               <div className="mt-3 h-0.5 w-16 bg-gradient-to-r from-green-400 to-green-600"></div>

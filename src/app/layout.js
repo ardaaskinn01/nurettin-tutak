@@ -1,4 +1,7 @@
+"use client";
+import { useEffect, useRef, useState } from 'react';
 import { Geist, Geist_Mono } from "next/font/google";
+import { metadata } from "./app-metadata";
 import Head from 'next/head';
 import "./globals.css";
 
@@ -12,27 +15,55 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "Nurettin Tutak Kişisel Web Sayfası",
-  description: "Nurettin Tutak Kişisel Web Sayfası",
-  icons: {
-    icon: "/nrtlogo.png",
-    shortcut: "/nrtlogo.png",
-    apple: "/nrtlogo.png",
-  },
-};
-
 export default function RootLayout({ children }) {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    audioRef.current = new Audio('/music.mp3');
+    audioRef.current.loop = true;
+
+    const handleFirstInteraction = () => {
+      if (!isPlaying) {
+        audioRef.current.play()
+          .then(() => setIsPlaying(true))
+          .catch(e => console.error("Müzik çalınamadı:", e));
+        document.removeEventListener('click', handleFirstInteraction);
+      }
+    };
+
+    document.addEventListener('click', handleFirstInteraction);
+
+    return () => {
+      audioRef.current.pause();
+      document.removeEventListener('click', handleFirstInteraction);
+    };
+  }, []);
+
   return (
-    <html lang="en">
+    <html lang="tr" className={`${geistSans.variable} ${geistMono.variable}`}>
       <Head>
-        <link rel="icon" href="/nrtlogo.png" sizes="32x32" />
-        <link rel="icon" href="/nrtlogo.png" sizes="16x16" />
-        <link rel="apple-touch-icon" href="/nrtlogo.png" />
-        <link rel="manifest" href="/manifest.json" />
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <link rel="icon" href={metadata.icons.icon} />
+        <link rel="shortcut icon" href={metadata.icons.shortcut} />
+        <link rel="apple-touch-icon" href={metadata.icons.apple} />
       </Head>
       <body>
         {children}
+        <button
+          onClick={() => {
+            if (isPlaying) {
+              audioRef.current.pause();
+            } else {
+              audioRef.current.play();
+            }
+            setIsPlaying(!isPlaying);
+          }}
+          className="fixed bottom-4 right-4 z-50 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors"
+        >
+          {isPlaying ? "⏸️" : "▶️"}
+        </button>
       </body>
     </html>
   );
