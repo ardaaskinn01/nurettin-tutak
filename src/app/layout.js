@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from 'react';
 import { Geist, Geist_Mono } from "next/font/google";
-import metadata from "./app-metadata";  // Default import
+import { metadata } from "./app-metadata";
 import Head from 'next/head';
 import "./globals.css";
 
@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
   const audioRef = useRef(null);
 
   useEffect(() => {
-    audioRef.current = new Audio("/music.mp3");
+    audioRef.current = new Audio('/music.mp3');
     audioRef.current.loop = true;
 
     const handleFirstInteraction = () => {
@@ -28,20 +28,20 @@ export default function RootLayout({ children }) {
         audioRef.current.play()
           .then(() => setIsPlaying(true))
           .catch(e => console.error("Müzik çalınamadı:", e));
-        document.removeEventListener("click", handleFirstInteraction);
+        document.removeEventListener('click', handleFirstInteraction);
       }
     };
 
-    document.addEventListener("click", handleFirstInteraction);
+    document.addEventListener('click', handleFirstInteraction);
 
     return () => {
       audioRef.current.pause();
-      document.removeEventListener("click", handleFirstInteraction);
+      document.removeEventListener('click', handleFirstInteraction);
     };
-  }, [isPlaying]);
+  }, []);
 
   return (
-    <html lang="tr">
+    <html lang="tr" className={`${geistSans.variable} ${geistMono.variable}`}>
       <Head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
@@ -51,8 +51,6 @@ export default function RootLayout({ children }) {
       </Head>
       <body>
         {children}
-
-        {/* Müzik Kontrol Butonu */}
         <button
           onClick={() => {
             if (isPlaying) {
