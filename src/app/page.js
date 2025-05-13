@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Navbar from "./components/Navbar";
 import CountUp from 'react-countup';
+import { useRef } from 'react';
 import { useState, useEffect } from 'react';
 
 export default function Home() {
@@ -12,20 +13,64 @@ export default function Home() {
     '/bg2.jpg',
     '/bg3.jpg'
   ];
+  const containerRef = useRef(null);
+  let startX = 0;
+  let currentX = 0;
+  let isDragging = false;
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBg((prev) => (prev + 1) % backgrounds.length);
-    }, 5000); // Her 5 saniyede bir geçiş
-    
+    }, 5000);
+
     return () => clearInterval(interval);
   }, []);
 
   const scrollToSection = () => {
     window.scrollTo({
       top: window.innerHeight,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
+  };
+
+  const handlePrevious = () => {
+    setCurrentBg((prev) => (prev - 1 + backgrounds.length) % backgrounds.length);
+  };
+
+  const handleNext = () => {
+    setCurrentBg((prev) => (prev + 1) % backgrounds.length);
+  };
+
+  const handleMouseDown = (e) => {
+    isDragging = true;
+    startX = e.clientX;
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    currentX = e.clientX;
+  };
+
+  const handleMouseUp = () => {
+    if (!isDragging) return;
+    const diff = startX - currentX;
+    if (diff > 50) handleNext();
+    if (diff < -50) handlePrevious();
+    isDragging = false;
+  };
+
+  const handleTouchStart = (e) => {
+    startX = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    currentX = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const diff = startX - currentX;
+    if (diff > 50) handleNext();
+    if (diff < -50) handlePrevious();
   };
 
   return (
@@ -39,58 +84,81 @@ export default function Home() {
       <div className="min-h-screen flex flex-col relative bg-gray-950">
         <Navbar />
 
-        {/* Hero Section */}
-        <section className="pt-32 md:pt-40 h-screen flex items-center justify-center text-center px-6 bg-cover bg-center relative overflow-hidden">
-      {/* Arka plan resimleri */}
-      {backgrounds.map((bg, index) => (
-        <div 
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${index === currentBg ? 'opacity-100' : 'opacity-0'}`}
-          style={{
-            backgroundImage: `url('${bg}')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
+        <section
+          className="pt-32 md:pt-40 h-screen flex items-center justify-center text-center px-6 bg-cover bg-center relative overflow-hidden"
+          ref={containerRef}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
-          <div className="absolute inset-0 bg-black opacity-50"></div>
-        </div>
-      ))}
+          {backgrounds.map((bg, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ${index === currentBg ? 'opacity-100' : 'opacity-0'}`}
+              style={{
+                backgroundImage: `url('${bg}')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
+            >
+              <div className="absolute inset-0 bg-black opacity-50"></div>
+            </div>
+          ))}
 
-      <div className="relative max-w-4xl mx-auto z-10">
-        <h1 className="text-center mb-12 relative">
-          <span className="block text-4xl md:text-6xl font-medium text-white leading-tight mb-4">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
-              Geçmişten Gelen Güç
-            </span>
-          </span>
-          <span className="block text-5xl md:text-7xl font-bold text-white leading-tight">
-            Geleceğe Sağlam Adım
-          </span>
-          <div className="mt-6 mx-auto w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-600"></div>
-        </h1>
-        <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-10 font-light">
-          50 yılı aşkın tecrübemizle inşaat sektöründe öncü çözümler sunuyoruz
-        </p>
+          <div className="relative max-w-4xl mx-auto z-10">
+            <h1 className="text-center mb-12 relative">
+              <span className="block text-4xl md:text-6xl font-medium text-white leading-tight mb-4">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-600">
+                  {Array.from('Geçmişten Gelen Güç').map((letter, index) => (
+                    <span key={index} className="letter">{letter}</span>
+                  ))}
+                </span>
+              </span>
+              <span className="block text-5xl md:text-7xl font-bold text-white leading-tight">
+                {Array.from('Geleceğe Sağlam Adım').map((letter, index) => (
+                  <span key={index} className="letter">{letter}</span>
+                ))}
+              </span>
+              <div className="mt-6 mx-auto w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-600"></div>
+            </h1>
+            <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-10 font-light">
+              50 yılı aşkın tecrübemizle inşaat sektöründe öncü çözümler sunuyoruz
+            </p>
 
-        <div className="mt-16 animate-bounce cursor-pointer" onClick={scrollToSection}>
-          <svg className="w-8 h-8 text-blue-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        </div>
-      </div>
+            <div className="mt-16 animate-bounce cursor-pointer" onClick={scrollToSection}>
+              <svg className="w-8 h-8 text-blue-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </div>
 
-      {/* Slider kontrolleri */}
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center space-x-2 z-10">
-        {backgrounds.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentBg(index)}
-            className={`w-3 h-3 rounded-full transition-all ${index === currentBg ? 'bg-white w-6' : 'bg-white/50'}`}
-            aria-label={`Slide ${index + 1}`}
-          />
-        ))}
-      </div>
-    </section>
+          <div className="absolute bottom-8 left-0 right-0 flex justify-center space-x-2 z-10">
+            {backgrounds.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentBg(index)}
+                className={`w-3 h-3 rounded-full transition-all ${index === currentBg ? 'bg-white w-6' : 'bg-white/50'}`}
+                aria-label={`Slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 cursor-pointer" onClick={handlePrevious}>
+            <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </div>
+
+          <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 cursor-pointer" onClick={handleNext}>
+            <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </section>
 
         {/* Hizmetlerimiz Section */}
         <section className="py-24 relative bg-gray-900">
