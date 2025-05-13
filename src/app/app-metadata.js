@@ -1,4 +1,4 @@
-export const metadata = {
+const metadata = {
   title: "Nurettin Tutak Kişisel Web Sayfası",
   description: "Nurettin Tutak Kişisel Web Sayfası",
   icons: {
@@ -7,3 +7,5 @@ export const metadata = {
     apple: "/nrtlogo.png",
   },
 };
+
+export default metadata;
