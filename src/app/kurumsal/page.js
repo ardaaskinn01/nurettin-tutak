@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import Image from "next/image";
 
 export default function Kurumsal() {
-  const images = Array.from({ length: 13 }, (_, i) => `/fabrika/${i}.jpg`);
+  const images = Array.from({ length: 19 }, (_, i) => `/fabrika/${i}.jpg`);
   const [selectedImage, setSelectedImage] = useState(null);
 
   const closeModal = () => setSelectedImage(null);

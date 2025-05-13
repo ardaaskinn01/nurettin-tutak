@@ -6,8 +6,45 @@ import CountUp from 'react-countup';
 import { useRef } from 'react';
 import { useState, useEffect } from 'react';
 
+const useSectionAnimation = () => {
+  const sectionRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fadeInUp');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    );
+
+    sectionRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      sectionRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
+
+  return sectionRefs;
+};
+
 export default function Home() {
+  const sectionRef = useRef(null);
+  const sectionRefs = useSectionAnimation();
   const [currentBg, setCurrentBg] = useState(0);
+  const [animatedText1, setAnimatedText1] = useState("");
+  const [animatedText2, setAnimatedText2] = useState("");
   const backgrounds = [
     '/background.jpg',
     '/bg2.jpg',
@@ -19,11 +56,66 @@ export default function Home() {
   let isDragging = false;
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fadeInUp");
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  // Metin animasyonları için
+  useEffect(() => {
+    const text1 = "Geçmişten Gelen Güç";
+    const text2 = "Geleceğe Sağlam Adım";
+
+    // İlk metin animasyonu
+    let i = 0;
+    const typing1 = setInterval(() => {
+      if (i < text1.length) {
+        setAnimatedText1(text1.substring(0, i + 1));
+        i++;
+      } else {
+        clearInterval(typing1);
+
+        // İkinci metin animasyonu
+        let j = 0;
+        const typing2 = setInterval(() => {
+          if (j < text2.length) {
+            setAnimatedText2(text2.substring(0, j + 1));
+            j++;
+          } else {
+            clearInterval(typing2);
+          }
+        }, 100); // İkinci metin yazma hızı
+      }
+    }, 150); // İlk metin yazma hızı
+
+    // Arka plan slider animasyonu
     const interval = setInterval(() => {
       setCurrentBg((prev) => (prev + 1) % backgrounds.length);
     }, 5000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(typing1);
+      clearInterval(interval);
+    };
   }, []);
 
   const scrollToSection = () => {
@@ -113,29 +205,48 @@ export default function Home() {
             <h1 className="text-center mb-12 relative">
               <span className="block text-4xl md:text-6xl font-medium text-white leading-tight mb-4">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-600">
-                  {Array.from('Geçmişten Gelen Güç').map((letter, index) => (
-                    <span key={index} className="letter">{letter}</span>
-                  ))}
+                  {animatedText1}
+                  {animatedText1.length < "Geçmişten Gelen Güç".length && (
+                    <span className="animate-pulse">|</span>
+                  )}
                 </span>
               </span>
               <span className="block text-5xl md:text-7xl font-bold text-white leading-tight">
-                {Array.from('Geleceğe Sağlam Adım').map((letter, index) => (
-                  <span key={index} className="letter">{letter}</span>
-                ))}
+                {animatedText2}
+                {animatedText1 === "Geçmişten Gelen Güç" && animatedText2.length < "Geleceğe Sağlam Adım".length && (
+                  <span className="animate-pulse">|</span>
+                )}
               </span>
-              <div className="mt-6 mx-auto w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-600"></div>
+              <div
+                className="mt-6 mx-auto w-24 h-1 bg-gradient-to-r from-green-400 to-green-600 transition-all duration-1000 delay-1000 scale-x-0 origin-left"
+                style={{
+                  animation: animatedText2 === "Geleceğe Sağlam Adım" ? 'scaleIn 1s forwards' : ''
+                }}
+              />
             </h1>
-            <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-10 font-light">
+            <p
+              className="text-gray-300 text-lg max-w-2xl mx-auto mb-10 font-light opacity-0"
+              style={{
+                animation: animatedText2 === "Geleceğe Sağlam Adım" ? 'fadeIn 1s forwards 0.5s' : ''
+              }}
+            >
               50 yılı aşkın tecrübemizle inşaat sektöründe öncü çözümler sunuyoruz
             </p>
 
-            <div className="mt-16 animate-bounce cursor-pointer" onClick={scrollToSection}>
-              <svg className="w-8 h-8 text-blue-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div
+              className="mt-16 cursor-pointer opacity-0"
+              onClick={scrollToSection}
+              style={{
+                animation: animatedText2 === "Geleceğe Sağlam Adım" ? 'fadeInUp 1s forwards 1s' : ''
+              }}
+            >
+              <svg className="w-8 h-8 text-green-400 mx-auto animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </div>
           </div>
 
+          {/* Slider kontrolleri */}
           <div className="absolute bottom-8 left-0 right-0 flex justify-center space-x-2 z-10">
             {backgrounds.map((_, index) => (
               <button
@@ -146,30 +257,21 @@ export default function Home() {
               />
             ))}
           </div>
-
-          <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 cursor-pointer" onClick={handlePrevious}>
-            <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </div>
-
-          <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 cursor-pointer" onClick={handleNext}>
-            <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </div>
         </section>
 
         {/* Hizmetlerimiz Section */}
-        <section className="py-24 relative bg-gray-900">
+        <section
+          ref={el => sectionRefs.current[0] = el}
+          className="py-24 relative bg-gray-900 opacity-0 translate-y-10 transition-all duration-500"
+        >
           {/* Arkaplan */}
           <div className="absolute inset-0 z-0">
             <img
               src="/bg.jpg"
               alt="Arkaplan"
-              className="w-full h-full object-cover opacity-50"
+              className="w-full h-full object-cover opacity-70"
             />
-            <div className="absolute inset-0 bg-gray-950/70"></div>
+            <div className="absolute inset-0 bg-black/40"></div>
           </div>
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -200,7 +302,10 @@ export default function Home() {
 
 
         {/* Neden Bizi Seçmelisiniz Section */}
-        <section className="relative py-16 min-h-[500px] flex items-center justify-center bg-gray-950 overflow-hidden">
+        <section
+          ref={el => sectionRefs.current[1] = el}
+          className="relative py-16 min-h-[650px] flex items-center justify-center bg-gray-950 overflow-hidden opacity-0 translate-y-10 transition-all duration-500"
+        >
           {/* Arkaplan Fotoğrafı */}
           <div className="absolute inset-0 z-0">
             <img
@@ -208,10 +313,10 @@ export default function Home() {
               alt="Arkaplan"
               className="w-full h-full object-cover opacity-70"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-gray-950/80 to-gray-950/90"></div>
+            <div className="absolute inset-0 bg-black/40"></div>
           </div>
 
-          <div className="max-w-5xl mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto px-6 relative z-10">
             <div className="text-center mb-12">
               <span className="text-xs font-medium text-green-400 tracking-widest">AVANTAJLARIMIZ</span>
               <h2 className="mt-1 text-2xl font-semibold text-white">
@@ -220,23 +325,23 @@ export default function Home() {
               <div className="mt-3 h-0.5 w-16 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center">
               {reasons.map((reason, index) => (
                 <div
                   key={index}
-                  className="group flex items-start bg-gray-800/70 p-4 rounded-lg border border-gray-700 hover:border-green-400 transition-all duration-200"
+                  className="group flex items-start bg-gray-800/70 p-6 rounded-lg border border-gray-700 hover:border-green-400 transition-all duration-300"
                 >
                   <div className="flex-shrink-0 mt-0.5">
-                    <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
-                      <svg className="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
+                      <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
                   </div>
-                  <div className="ml-3">
-                    <h3 className="text-base font-medium text-white">{reason.title}</h3>
+                  <div className="ml-4">
+                    <h3 className="text-lg font-semibold text-white">{reason.title}</h3>
                     {reason.description && (
-                      <p className="mt-0.5 text-xs text-gray-400 font-light">{reason.description}</p>
+                      <p className="mt-1 text-sm text-gray-400 font-light">{reason.description}</p>
                     )}
                   </div>
                 </div>
@@ -245,47 +350,81 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Stats Bölümü */}
-        <section className="py-12 bg-gradient-to-b from-gray-950 to-gray-900">
-          <div className="max-w-5xl mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+        <section
+          ref={sectionRef}
+          className="py-16 bg-gradient-to-b from-gray-950 to-gray-900 opacity-0 translate-y-10 transition-all duration-500"
+        >
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+
               {/* 50+ Yıl */}
-              <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700 hover:border-green-400 transition-colors duration-300">
-                <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2">
+              <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg border border-gray-600 hover:border-green-400 transition duration-300 animate-fadeInUp">
+                <div className="mb-4 bg-green-500/20 p-3 rounded-full">
+                  <svg className="w-8 h-8 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M12 2a10 10 0 1 1-10 10A10 10 0 0 1 12 2z" />
+                    <path d="M12 6v6l4 2" />
+                  </svg>
+                </div>
+                <div className="text-4xl font-bold text-green-400 mb-2">
                   <CountUp end={50} duration={3} suffix="+" />
                 </div>
-                <p className="text-xs md:text-sm font-light text-gray-300">Yıllık Deneyim</p>
+                <p className="text-sm font-light text-gray-300">Yıllık Deneyim</p>
               </div>
 
               {/* 200+ Bina */}
-              <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700 hover:border-green-400 transition-colors duration-300">
-                <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2">
+              <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg border border-gray-600 hover:border-green-400 transition duration-300 animate-fadeInUp">
+                <div className="mb-4 bg-blue-500/20 p-3 rounded-full">
+                  <svg className="w-8 h-8 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M3 21h18" />
+                    <path d="M3 7h18" />
+                    <path d="M6 21V10" />
+                    <path d="M18 21V10" />
+                    <path d="M9 21V3h6v18" />
+                  </svg>
+                </div>
+                <div className="text-4xl font-bold text-blue-400 mb-2">
                   <CountUp end={200} duration={3} suffix="+" />
                 </div>
-                <p className="text-xs md:text-sm font-light text-gray-300">Tamamlanan Bina</p>
+                <p className="text-sm font-light text-gray-300">Tamamlanan Bina</p>
               </div>
 
-              {/* 50+ Villa */}
-              <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700 hover:border-green-400 transition-colors duration-300">
-                <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2">
-                  <CountUp end={50} duration={3} suffix="+" />
+              {/* 90+ Villa */}
+              <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg border border-gray-600 hover:border-green-400 transition duration-300 animate-fadeInUp">
+                <div className="mb-4 bg-purple-500/20 p-3 rounded-full">
+                  <svg className="w-8 h-8 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M12 2l7 7-7 7-7-7z" />
+                    <path d="M5 10h14" />
+                  </svg>
                 </div>
-                <p className="text-xs md:text-sm font-light text-gray-300">Lüks Villa</p>
+                <div className="text-4xl font-bold text-purple-400 mb-2">
+                  <CountUp end={90} duration={3} suffix="+" />
+                </div>
+                <p className="text-sm font-light text-gray-300">Lüks Villa</p>
               </div>
 
               {/* 10+ Proje */}
-              <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700 hover:border-green-400 transition-colors duration-300">
-                <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2">
+              <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg border border-gray-600 hover:border-green-400 transition duration-300 animate-fadeInUp">
+                <div className="mb-4 bg-red-500/20 p-3 rounded-full">
+                  <svg className="w-8 h-8 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M3 12h18" />
+                    <path d="M6 12l6-6 6 6" />
+                    <path d="M6 18l6-6 6 6" />
+                  </svg>
+                </div>
+                <div className="text-4xl font-bold text-red-400 mb-2">
                   <CountUp end={10} duration={3} suffix="+" />
                 </div>
-                <p className="text-xs md:text-sm font-light text-gray-300">Devam Eden Proje</p>
+                <p className="text-sm font-light text-gray-300">Devam Eden Proje</p>
               </div>
+
             </div>
           </div>
         </section>
 
-        {/* Kronoloji Bölümü */}
-        <section className="py-16 relative bg-gray-900">
+        <section
+          ref={el => sectionRefs.current[3] = el}
+          className="py-16 relative bg-gray-900 opacity-0 translate-y-10 transition-all duration-500"
+        >
           {/* Arkaplan */}
           <div className="absolute inset-0 z-0">
             <img
@@ -293,40 +432,50 @@ export default function Home() {
               alt="Arkaplan"
               className="w-full h-full object-cover opacity-70"
             />
-            <div className="absolute inset-0 bg-black/80"></div>
+            <div className="absolute inset-0 bg-black/40"></div>
           </div>
 
-          <div className="max-w-5xl mx-auto px-4 relative z-10">
+          <div className="w-full pl-8 relative z-10">
             <div className="text-left mb-12">
               <span className="text-xs font-medium text-green-400 tracking-widest">TARİHÇEMİZ</span>
               <h2 className="mt-2 text-2xl font-semibold text-white">Yolculuğumuz</h2>
               <div className="mt-3 h-0.5 w-16 bg-gradient-to-r from-green-400 to-green-600"></div>
             </div>
 
-            <div className="space-y-6">
-              {timeline.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex items-start space-x-4"
-                >
-                  {/* Nokta */}
-                  <div className="w-3 h-3 rounded-full bg-green-500 border-2 border-gray-800 shadow-lg mt-1"></div>
+            <div className="relative">
+              {/* Dikey Çizgi */}
+              <div className="absolute left-2 top-0 bottom-0 w-1 bg-green-400 z-0"></div>
 
-                  {/* İçerik */}
-                  <div className="bg-gray-800/60 p-4 rounded-lg border border-gray-700 hover:border-green-400 transition-all duration-200 shadow-md">
-                    <p className="text-green-400 text-sm font-medium mb-1">{item.year}</p>
-                    <h3 className="text-lg font-semibold text-white mb-1">{item.title}</h3>
-                    <p className="text-gray-400 text-xs font-light">{item.description}</p>
+              {/* Grid yapısı */}
+              <div className="space-y-6 relative z-10">
+                {timeline.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start space-x-4"
+                  >
+                    {/* Nokta */}
+                    <div className="w-4 h-4 rounded-full bg-green-500 border-2 border-gray-900 shadow-lg relative z-12"></div>
+
+                    {/* İçerik */}
+                    <div className="bg-gray-800/60 p-4 rounded-lg border border-gray-700 hover:border-green-400 transition-all duration-200 shadow-md flex flex-col h-full w-full max-w-lg">
+                      <p className="text-green-400 text-sm font-medium mb-1">{item.year}</p>
+                      <h3 className="text-lg font-semibold text-white mb-1">{item.title}</h3>
+                      <p className="text-gray-400 text-xs font-light">{item.description}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
 
+
         {/* Footer */}
-        <footer className="w-full py-20 relative overflow-hidden">
+        <footer
+          ref={el => sectionRefs.current[4] = el}
+          className="w-full py-20 relative overflow-hidden opacity-0 translate-y-10 transition-all duration-500"
+        >
           {/* Gradient Arkaplan */}
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-green-900/30 opacity-95"></div>

@@ -1,66 +1,67 @@
 "use client";
 import Navbar from "../../components/Navbar";
 import Link from "next/link";
-import Image from "next/image"; // Image import edildi
 import { useRouter } from "next/navigation";
 
 export default function Nazilli() {
-    const router = useRouter();
-    const projects = [
-        { title: "Ocaklı", link: "/projelerimiz/nazilli/ocakli" },
-        { title: "Pamukören", link: "/projelerimiz/nazilli/pamukoren" },
-        { title: "Dualar", link: "/projelerimiz/nazilli/dualar" },
-        { title: "HamİDİye", link: "/projelerimiz/nazilli/hamidiye" },
-    ];
+  const router = useRouter();
+  const projects = [
+    { title: "Ocaklı", link: "/projelerimiz/nazilli/ocakli", villas: 9 },
+    { title: "Pamukören", link: "/projelerimiz/nazilli/pamukoren", villas: 15 },
+    { title: "Dualar", link: "/projelerimiz/nazilli/dualar", villas: 24 },
+    { title: "HamİDİye", link: "/projelerimiz/nazilli/hamidiye", villas: 42 },
+  ];
 
-     return (
-            <div className="relative min-h-screen">
-                <Navbar />
-    
-                <div className="absolute top-24 left-6 z-20">
-                    <button
-                        onClick={() => router.back()}
-                        className="bg-orange-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-orange-600"
-                    >
-                        ← Geri
-                    </button>
-                </div>
-    
-                {/* Arkaplan */}
-                <div
-                    className="absolute inset-0 bg-cover bg-fixed bg-center"
-                    style={{
-                        backgroundImage: "url('/bg.jpg')",
-                    }}
-                />
-    
-                {/* Arkaplan karartması */}
-                <div className="absolute inset-0 bg-black opacity-70" />
-    
-                <div className="relative z-10 max-w-7xl mx-auto px-6 pt-36 pb-12">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl font-semibold text-white">NAZİLLİ / AYDIN</h2>
-                        <div className="mt-3 h-1 w-16 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
-                    </div>
-    
+  return (
+    <div className="relative min-h-screen">
+      <Navbar />
 
-                    {/* Cardlar alt alta ve geniş dikdörtgen yapıldı */}
-                    <div className="flex flex-col items-center gap-12">
-                        {projects.map((project, index) => (
-                            <Link
-                                href={project.link}
-                                key={index}
-                                className="group relative overflow-hidden rounded-lg border-l-4 border-orange-500 w-full max-w-2xl h-24 bg-white bg-opacity-80 transition-transform duration-300 hover:scale-105 shadow-xl"
-                            >
-                                <div className="text-center flex items-center justify-center h-full">
-                                    <span className="text-orange-500 text-xl uppercase font-semibold">
-                                        {project.title}
-                                    </span>
-                                </div>
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            </div>
-    );
+      <div className="absolute top-24 left-6 z-20">
+        <button
+          onClick={() => router.back()}
+          className="bg-orange-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-orange-600"
+        >
+          ← Geri
+        </button>
+      </div>
+
+      {/* Arkaplan */}
+      <div
+        className="absolute inset-0 bg-cover bg-fixed bg-center"
+        style={{
+          backgroundImage: "url('/bg.jpg')",
+        }}
+      />
+
+      {/* Arkaplan karartması */}
+      <div className="absolute inset-0 bg-black opacity-70" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-36 pb-12">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-semibold text-white">NAZİLLİ / AYDIN</h2>
+          <div className="mt-3 h-1 w-16 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
+        </div>
+
+        {/* Kartlar */}
+        <div className="flex flex-col items-center gap-8">
+          {projects.map((project, index) => (
+            <Link
+              href={project.link}
+              key={index}
+              className="group relative overflow-hidden rounded-lg border-l-4 border-orange-500 w-full max-w-2xl h-28 bg-white bg-opacity-80 transition-transform duration-300 hover:scale-105 shadow-xl"
+            >
+              <div className="flex flex-col justify-center items-center h-full">
+                <span className="text-orange-500 text-xl uppercase font-semibold">
+                  {project.title}
+                </span>
+                <span className="text-gray-600 text-sm font-light mt-1">
+                  {project.villas} Villa
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }

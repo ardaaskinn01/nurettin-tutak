@@ -88,11 +88,11 @@ export default function Hakkinda() {
             <div className="text-center bg-gray-800/80 p-6 rounded-2xl border border-gray-700 shadow-sm backdrop-blur-sm">
               <div className="w-36 h-36 mx-auto mb-4 rounded-full overflow-hidden border-4 border-green-300">
                 <Image
-                  src="/profil1.jpg"
+                  src="/hasan.png"
                   alt=""
-                  width={144}
-                  height={144}
-                  className="object-cover w-full h-full"
+                  width={100}
+                  height={200}
+                  className="object-contain w-full h-full"
                 />
               </div>
               <h3 className="text-lg font-semibold text-white">Hasan Tutak</h3>
@@ -102,11 +102,11 @@ export default function Hakkinda() {
             <div className="text-center bg-gray-800/80 p-6 rounded-2xl border border-gray-700 shadow-sm backdrop-blur-sm">
               <div className="w-36 h-36 mx-auto mb-4 rounded-full overflow-hidden border-4 border-green-300">
                 <Image
-                  src="/profil2.jpg"
+                  src="/nurettin.png"
                   alt=""
-                  width={144}
-                  height={144}
-                  className="object-cover w-full h-full"
+                  width={100}
+                  height={200}
+                  className="object-contain w-full h-full"
                 />
               </div>
               <h3 className="text-lg font-semibold text-white">Nurettin Tutak</h3>
