@@ -440,11 +440,9 @@ export default function Home() {
           </div>
 
           <div className="w-full pl-8 relative z-10">
-            <div className="text-left mb-12"><CountUp end={50} duration={3} suffix="+" start={0} />
               <span className="text-xs font-medium text-green-400 tracking-widest">TARİHÇEMİZ</span>
               <h2 className="mt-2 text-2xl font-semibold text-white">Yolculuğumuz</h2>
               <div className="mt-3 h-0.5 w-16 bg-gradient-to-r from-green-400 to-green-600"></div>
-            </div>
 
             <div className="relative">
               {/* Dikey Çizgi */}
