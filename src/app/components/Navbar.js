@@ -11,10 +11,10 @@ export default function Navbar() {
   const getLinkClass = (href) =>
     pathname === href || (href === "/projelerimiz" && pathname.startsWith("/projelerimiz"))
       ? "text-white font-semibold border-b-2 border-white"
-      : "text-gray-300 hover:text-white transition-colors duration-300";
+      : "text-gray-100 hover:text-white transition-colors duration-300";
 
   return (
-    <nav className="fixed w-full z-50 bg-green-600/90 backdrop-blur-md top-0 left-0 right-0 border-b border-green-700 shadow-lg">
+    <nav className="fixed w-full z-50 bg-gradient-to-r from-green-800 via-green-600 to-green-500 backdrop-blur-md top-0 left-0 right-0 border-b border-green-700 shadow-lg">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
