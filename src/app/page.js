@@ -356,24 +356,24 @@ export default function Home() {
         </section>
 
         <section
-        ref={(el) => sectionRefs.current[2] = el}
-        className="py-16 bg-gradient-to-b from-gray-950 to-gray-900 opacity-0 translate-y-10 transition-all duration-500 stats-section"
-      >
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-            {/* 50+ Yıl */}
-            <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg border border-gray-600 hover:border-green-400 transition duration-300 count-up-trigger opacity-0">
-              <div className="mb-4 bg-green-500/20 p-3 rounded-full">
-                <svg className="w-8 h-8 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M12 2a10 10 0 1 1-10 10A10 10 0 0 1 12 2z" />
-                  <path d="M12 6v6l4 2" />
-                </svg>
+          ref={(el) => sectionRefs.current[2] = el}
+          className="py-16 bg-gradient-to-b from-gray-950 to-gray-900 opacity-0 translate-y-10 transition-all duration-500 stats-section"
+        >
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+              {/* 50+ Yıl */}
+              <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg border border-gray-600 hover:border-green-400 transition duration-300 count-up-trigger opacity-0">
+                <div className="mb-4 bg-green-500/20 p-3 rounded-full">
+                  <svg className="w-8 h-8 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M12 2a10 10 0 1 1-10 10A10 10 0 0 1 12 2z" />
+                    <path d="M12 6v6l4 2" />
+                  </svg>
+                </div>
+                <div className="text-4xl font-bold text-green-400 mb-2">
+                  {startCountUp && <CountUp end={50} duration={3} suffix="+" />}
+                </div>
+                <p className="text-sm font-light text-gray-300">Yıllık Deneyim</p>
               </div>
-              <div className="text-4xl font-bold text-green-400 mb-2">
-                {startCountUp && <CountUp end={50} duration={3} suffix="+" />}
-              </div>
-              <p className="text-sm font-light text-gray-300">Yıllık Deneyim</p>
-            </div>
 
               {/* 200+ Bina */}
               <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg border border-gray-600 hover:border-green-400 transition duration-300 count-up-trigger opacity-0">
@@ -440,9 +440,9 @@ export default function Home() {
           </div>
 
           <div className="w-full pl-8 relative z-10">
-              <span className="text-xs font-medium text-green-400 tracking-widest">TARİHÇEMİZ</span>
-              <h2 className="mt-2 text-2xl font-semibold text-white">Yolculuğumuz</h2>
-              <div className="mt-3 h-0.5 w-16 bg-gradient-to-r from-green-400 to-green-600"></div>
+            <span className="text-xs font-medium text-green-400 tracking-widest">TARİHÇEMİZ</span>
+            <h2 className="mt-2 text-2xl font-semibold text-white">Yolculuğumuz</h2>
+            <div className="mt-3 h-0.5 w-16 bg-gradient-to-r from-green-400 to-green-600"></div>
 
             <div className="relative">
               {/* Dikey Çizgi */}

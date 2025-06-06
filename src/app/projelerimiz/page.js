@@ -7,6 +7,7 @@ export default function Projeler() {
   const projects = [
     { title: "TavşanlI / KÜTAHYA", link: "/projelerimiz/tavsanli" },
     { title: "NazİLLİ / AYDIN", link: "/projelerimiz/nazilli" },
+    { title: "Karaburun / İZMİR", link: "/projelerimiz/karaburun" },
   ];
 
   return (
@@ -31,7 +32,7 @@ export default function Projeler() {
                 </div>
 
           {/* Cardlar alt alta ve geniş dikdörtgen yapıldı */}
-          <div className="flex flex-col items-center gap-12">
+          <div className="flex flex-col items-center gap-8">
             {projects.map((project, index) => (
               <Link
                 href={project.link}
