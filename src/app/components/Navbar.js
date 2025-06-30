@@ -23,14 +23,14 @@ export default function Navbar() {
   return (
     <nav className="fixed w-full z-50 bg-green-700/60 backdrop-blur-md backdrop-saturate-150 border-b border-green-800 shadow-xl">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-28">
           {/* Logo */}
           <Link href="/" className="text-2xl font-bold">
             <Image
               src="/nrt10.png"
               alt="Nurettin Tutak Logo"
-              width={125}
-              height={28}
+              width={135}
+              height={30}
               priority
               quality={100}
             />
