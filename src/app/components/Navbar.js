@@ -2,63 +2,59 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
-import Image from "next/image";  // Image bileşenini import ettim
+import Image from "next/image";
 
 export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const getLinkClass = (href) =>
-    pathname === href || (href === "/projelerimiz" && pathname.startsWith("/projelerimiz"))
-      ? "text-white font-semibold border-b-2 border-white"
-      : "text-gray-100 hover:text-white transition-colors duration-300";
+  const isActive = (href) =>
+    pathname === href || (href === "/projelerimiz" && pathname.startsWith("/projelerimiz"));
+
+  const linkBaseClass =
+    "relative group px-4 py-2 text-lg text-gray-100 hover:text-white transition-colors duration-300";
+
+  const activeLinkClass =
+    "text-white font-semibold after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white after:scale-x-100 after:origin-left after:transition-transform after:duration-300";
+
+  const inactiveLinkUnderline =
+    "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white after:scale-x-0 group-hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300";
 
   return (
-    <nav className="fixed w-full z-50 bg-gradient-to-r from-green-800 via-green-600 to-green-500 backdrop-blur-md top-0 left-0 right-0 border-b border-green-700 shadow-lg">
+    <nav className="fixed w-full z-50 bg-green-700/60 backdrop-blur-md backdrop-saturate-150 border-b border-green-800 shadow-xl">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <Link href="/" className="text-2xl font-bold">
             <Image
-              src="/nrtlogo2.png"  // Burada logo dosyasını belirtiyoruz
+              src="/nrt10.png"
               alt="Nurettin Tutak Logo"
-              width={120}  // İstediğiniz boyutu ayarlayabilirsiniz
-              height={27}  // İstediğiniz boyutu ayarlayabilirsiniz
+              width={125}
+              height={28}
+              priority
+              quality={100}
             />
           </Link>
 
           {/* Desktop Menü */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link 
-              href="/" 
-              className={`px-4 py-2 text-lg ${getLinkClass("/")}`}
-            >
-              Ana Sayfa
-            </Link>
-            <Link 
-              href="/hakkinda" 
-              className={`px-4 py-2 text-lg ${getLinkClass("/hakkinda")}`}
-            >
-              Hakkında
-            </Link>
-            <Link 
-              href="/kurumsal" 
-              className={`px-4 py-2 text-lg ${getLinkClass("/kurumsal")}`}
-            >
-              Üretim Tesisimiz
-            </Link>
-            <Link 
-              href="/projelerimiz" 
-              className={`px-4 py-2 text-lg ${getLinkClass("/projelerimiz")}`}
-            >
-              Projelerimiz
-            </Link>
-            <Link 
-              href="/iletisim" 
-              className={`px-4 py-2 text-lg ${getLinkClass("/iletisim")}`}
-            >
-              İletişim
-            </Link>
+            {[
+              { href: "/", label: "Ana Sayfa" },
+              { href: "/hakkinda", label: "Hakkında" },
+              { href: "/kurumsal", label: "Üretim Tesisimiz" },
+              { href: "/projelerimiz", label: "Projelerimiz" },
+              { href: "/iletisim", label: "İletişim" },
+            ].map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className={`${linkBaseClass} ${
+                  isActive(href) ? activeLinkClass : inactiveLinkUnderline
+                }`}
+              >
+                {label}
+              </Link>
+            ))}
           </div>
 
           {/* Mobil Menü Butonu */}
@@ -83,41 +79,26 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="md:hidden bg-green-600/90 backdrop-blur-lg border-t border-green-700">
             <div className="px-4 py-3 space-y-4">
-              <Link 
-                href="/" 
-                className={`block px-4 py-3 rounded-lg text-lg ${getLinkClass("/")} hover:bg-green-700/50 transition-colors`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Ana Sayfa
-              </Link>
-              <Link 
-                href="/hakkinda" 
-                className={`block px-4 py-3 rounded-lg text-lg ${getLinkClass("/hakkinda")} hover:bg-green-700/50 transition-colors`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Hakkında
-              </Link>
-              <Link 
-                href="/kurumsal" 
-                className={`block px-4 py-3 rounded-lg text-lg ${getLinkClass("/kurumsal")} hover:bg-green-700/50 transition-colors`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Üretim Tesisimiz
-              </Link>
-              <Link 
-                href="/projelerimiz" 
-                className={`block px-4 py-3 rounded-lg text-lg ${getLinkClass("/projelerimiz")} hover:bg-green-700/50 transition-colors`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Projelerimiz
-              </Link>
-              <Link 
-                href="/iletisim" 
-                className={`block px-4 py-3 rounded-lg text-lg ${getLinkClass("/iletisim")} hover:bg-green-700/50 transition-colors`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                İletişim
-              </Link>
+              {[
+                { href: "/", label: "Ana Sayfa" },
+                { href: "/hakkinda", label: "Hakkında" },
+                { href: "/kurumsal", label: "Üretim Tesisimiz" },
+                { href: "/projelerimiz", label: "Projelerimiz" },
+                { href: "/iletisim", label: "İletişim" },
+              ].map(({ href, label }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className={`block px-4 py-3 rounded-lg text-lg ${
+                    isActive(href)
+                      ? "text-white font-semibold bg-green-700/50"
+                      : "text-gray-100 hover:text-white hover:bg-green-700/50"
+                  } transition-colors`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {label}
+                </Link>
+              ))}
             </div>
           </div>
         )}
