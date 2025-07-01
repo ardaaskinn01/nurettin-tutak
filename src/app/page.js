@@ -480,48 +480,21 @@ const stats = [
     value: 50,
     suffix: "+",
     label: "Yıllık Deneyim",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-        <path d="M12 2a10 10 0 1 1-10 10A10 10 0 0 1 12 2z" />
-      </svg>
-    )
   },
   {
     value: 50,
     suffix: "+",
     label: "Tamamlanan Bina",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-        <path d="M3 21h18" />
-        <path d="M3 7h18" />
-        <path d="M6 21V10" />
-        <path d="M18 21V10" />
-        <path d="M9 21V3h6v18" />
-      </svg>
-    )
   },
   {
     value: 90,
     suffix: "+",
     label: "Lüks Villa",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-        <path d="M12 2l7 7-7 7-7-7z" />
-        <path d="M5 10h14" />
-      </svg>
-    )
   },
   {
     value: 10,
     suffix: "+",
     label: "Devam Eden Proje",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-        <path d="M3 12h18" />
-        <path d="M6 12l6-6 6 6" />
-        <path d="M6 18l6-6 6 6" />
-      </svg>
-    )
   }
 ];
 
