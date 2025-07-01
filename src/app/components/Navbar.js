@@ -27,7 +27,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="text-2xl font-bold">
             <Image
-              src="/nrt03.png"
+              src="/nrtlogo2.png"
               alt="Nurettin Tutak Logo"
               width={135}
               height={30}
