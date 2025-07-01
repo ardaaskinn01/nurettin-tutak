@@ -24,7 +24,7 @@ export default function Hakkinda() {
       <div className="relative z-20 flex-grow pt-32 px-6 md:px-20 lg:px-36 text-white">
         <div className="max-w-7xl mx-auto">
           {/* Başlık */}
-          <h1 className="text-4xl font-bold text-white mb-4 md:mb-8 lg:mb-12 border-b-4 border-green-400 inline-block pb-2">
+          <h1 className="text-4xl font-bold text-white mb-4 md:mb-8 lg:mb-12 border-b-4 border-blue-400 inline-block pb-2">
             Hakkında
           </h1>
 
@@ -53,7 +53,7 @@ export default function Hakkinda() {
           {/* Kartlar */}
           <div className="mt-16 grid md:grid-cols-2 gap-12">
             {/* Misyon */}
-            <div className="bg-gray-800/80 p-8 rounded-3xl shadow-lg border-t-4 border-green-500 backdrop-blur-sm">
+            <div className="bg-gray-800/80 p-8 rounded-3xl shadow-lg border-t-4 border-blue-500 backdrop-blur-sm">
               <h2 className="text-2xl font-bold text-white mb-4">Misyonumuz ve Değerlerimiz</h2>
               <p className="text-base text-white leading-7">
                 55 yılı aşkın süredir babadan oğula aktarılan bu meslek yalnızca bir iş değil; güvenin, emeğin ve aile değerlerinin ortak adıdır. Tutakoğulları ve NRT Grup İnşaat olarak biz, kaliteye, güvene ve müşteri memnuniyetine dayalı bir anlayışla çalışıyor; bulunduğumuz her sektörde örnek gösterilen projelere imza atmaya devam ediyoruz.
@@ -61,7 +61,7 @@ export default function Hakkinda() {
             </div>
 
             {/* Vizyon */}
-            <div className="bg-gray-800/80 p-8 rounded-3xl shadow-lg border-t-4 border-green-500 backdrop-blur-sm">
+            <div className="bg-gray-800/80 p-8 rounded-3xl shadow-lg border-t-4 border-blue-500 backdrop-blur-sm">
               <h2 className="text-2xl font-bold text-white mb-4">Geleceğe Yönelik Vizyonumuz</h2>
               <p className="text-base text-white leading-7">
                 NRT Grup A.Ş. olarak geçmişten aldığımız güçle geleceğe emin adımlarla ilerliyoruz. 2025 yılı hedeflerimiz arasında, Kütahya Gediz Organize Sanayi Bölgesi'nde kurulacak olan yeni üretim tesisimizle üretim alanımızı 50.000 m²'ye çıkarmak ve bisiklet/otomobil parçaları üretiminde yurt dışı yatırımlarla büyümek yer almaktadır.
@@ -86,7 +86,7 @@ export default function Hakkinda() {
           <div className="mt-6 grid md:grid-cols-2 gap-12">
             {/* Nurettin */}
             <div className="text-center bg-gray-800/80 p-6 rounded-2xl border border-gray-700 shadow-sm backdrop-blur-sm">
-              <div className="w-36 h-36 mx-auto mb-4 rounded-full overflow-hidden border-4 border-green-300">
+              <div className="w-36 h-36 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-300">
                 <Image
                   src="/hasan.png"
                   alt=""
@@ -100,7 +100,7 @@ export default function Hakkinda() {
 
             {/* Hasan */}
             <div className="text-center bg-gray-800/80 p-6 rounded-2xl border border-gray-700 shadow-sm backdrop-blur-sm">
-              <div className="w-36 h-36 mx-auto mb-4 rounded-full overflow-hidden border-4 border-green-300">
+              <div className="w-36 h-36 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-300">
                 <Image
                   src="/nurettin.png"
                   alt=""

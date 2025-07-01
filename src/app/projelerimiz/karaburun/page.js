@@ -13,7 +13,7 @@ export default function Nazilli() {
     <div className="relative min-h-screen">
       <Navbar />
 
-      <div className="absolute top-24 left-6 z-20">
+      <div className="absolute top-32 left-6 z-20">
         <button
           onClick={() => router.back()}
           className="bg-orange-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-orange-600"

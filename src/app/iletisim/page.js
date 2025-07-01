@@ -59,34 +59,34 @@ export default function Iletisim() {
         <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>
 
-      <div className="flex-grow py-16 px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="flex-grow py-24 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 mt-8">
-            <h1 className="text-4xl font-bold text-green-300 mb-4">BİZE ULAŞIN</h1>
+            <h1 className="text-4xl font-bold text-blue-300 mb-4">BİZE ULAŞIN</h1>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* İletişim Bilgileri */}
             <div className="space-y-6">
               <div className="bg-white p-6 rounded-2xl border-l-8 border-orange-400 shadow-lg hover:shadow-yellow-200 transition duration-300 opacity-80">
-                <h3 className="text-xl font-semibold text-green-500 mb-4">İletişim Bilgileri</h3>
+                <h3 className="text-xl font-semibold text-blue-500 mb-4">İletişim Bilgileri</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start">
-                    <svg className="w-5 h-5 text-green-500 mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-blue-500 mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                     <div>
                       <p className="text-gray-500">Email</p>
-                      <a href="mailto:nurettintutak@hotmail.com" className="text-gray-800 hover:text-green-500 transition">nurettintutak@hotmail.com</a>
+                      <a href="mailto:nurettintutak@hotmail.com" className="text-gray-800 hover:text-blue-500 transition">nurettintutak@hotmail.com</a>
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <svg className="w-5 h-5 text-green-500 mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-blue-500 mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                     <div>
                       <p className="text-gray-500">Telefon</p>
-                      <a href="tel:+905467689992" className="text-gray-800 hover:text-green-500 transition">+90 (546) 768 99 92</a>
+                      <a href="tel:+905467689992" className="text-gray-800 hover:text-blue-500 transition">+90 (546) 768 99 92</a>
                     </div>
                   </li>
                 </ul>
@@ -95,7 +95,7 @@ export default function Iletisim() {
 
             {/* İletişim Formu */}
             <div className="bg-white p-6 rounded-2xl border-l-8 border-orange-400 shadow-lg hover:shadow-yellow-200 transition duration-300 opacity-80">
-              <h3 className="text-xl font-semibold text-green-500 mb-6">Mesaj Gönderin</h3>
+              <h3 className="text-xl font-semibold text-blue-500 mb-6">Mesaj Gönderin</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label htmlFor="name" className="block text-gray-600 mb-2">Ad Soyad</label>
@@ -105,7 +105,7 @@ export default function Iletisim() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     required
                   />
                 </div>
@@ -117,7 +117,7 @@ export default function Iletisim() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     required
                   />
                 </div>
@@ -129,7 +129,7 @@ export default function Iletisim() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 </div>
                 <div>
@@ -140,13 +140,13 @@ export default function Iletisim() {
                     rows="4"
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     required
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-green-400 hover:bg-green-500 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 shadow-md shadow-green-200"
+                  className="w-full bg-blue-400 hover:bg-blue-500 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 shadow-md shadow-blue-200"
                 >
                   GÖNDER
                 </button>

@@ -12,8 +12,8 @@ export default function Ocakli() {
     const closeModal = () => setSelectedImage(null);
 
     return (
-        <div className="bg-gradient-to-r from-green-800 to-gray-800 min-h-screen">
-            <Navbar /><div className="absolute top-24 left-6 z-10">
+        <div className="bg-gradient-to-r from-blue-800 to-gray-800 min-h-screen">
+            <Navbar /><div className="absolute top-32 left-6 z-10">
                 <button
                     onClick={() => router.back()}
                     className="bg-orange-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-orange-600"
@@ -23,11 +23,11 @@ export default function Ocakli() {
             </div>
 
             {/* Navbar yüksekliği kadar boşluk bırak */}
-            <div className="pt-24 pb-16">
+            <div className="pt-36 pb-16">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-12">
                         <p className="text-gray-400 mt-2 text-sm">ÇELİK YAPI</p>
-                        <div className="mt-3 h-1 w-16 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
+                        <div className="mt-3 h-1 w-16 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto"></div>
                     </div>
 
                     {/* Görsel Grid */}

@@ -14,7 +14,7 @@ export default function Ocakli() {
     return (
         <div className="bg-gradient-to-r from-green-800 to-gray-800 min-h-screen">
             <Navbar />
-            <div className="absolute top-24 left-6 z-10">
+            <div className="absolute top-32 left-6 z-10">
                 <button
                     onClick={() => router.back()}
                     className="bg-orange-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-orange-600"

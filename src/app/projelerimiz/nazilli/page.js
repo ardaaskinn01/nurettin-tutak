@@ -16,7 +16,7 @@ export default function Nazilli() {
     <div className="relative min-h-screen">
       <Navbar />
 
-      <div className="absolute top-24 left-6 z-20">
+      <div className="absolute top-32 left-6 z-20">
         <button
           onClick={() => router.back()}
           className="bg-orange-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-orange-600"
@@ -39,7 +39,7 @@ export default function Nazilli() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-36 pb-12">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-semibold text-white">NAZİLLİ / AYDIN</h2>
-          <div className="mt-3 h-1 w-16 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
+          <div className="mt-3 h-1 w-16 bg-gradient-to-r from-blue-600 to-blue-800 mx-auto"></div>
         </div>
 
         {/* Kartlar */}

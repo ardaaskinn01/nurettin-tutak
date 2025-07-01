@@ -28,7 +28,7 @@ export default function Projeler() {
             <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-12">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-semibold text-white">KONUMLAR</h2>
-                    <div className="mt-3 h-1 w-16 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
+                    <div className="mt-3 h-1 w-16 bg-gradient-to-r from-blue-600 to-blue-800 mx-auto"></div>
                 </div>
 
           {/* Cardlar alt alta ve geniş dikdörtgen yapıldı */}

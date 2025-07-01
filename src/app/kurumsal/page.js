@@ -10,11 +10,11 @@ export default function Kurumsal() {
   const closeModal = () => setSelectedImage(null);
 
   return (
-    <div className="bg-gradient-to-r from-green-800 to-gray-800 min-h-screen">
+    <div className="bg-gradient-to-r from-blue-800 to-gray-800 min-h-screen">
       <Navbar />
 
       {/* Navbar yüksekliği kadar boşluk bırak */}
-      <div className="pt-24 pb-16">
+      <div className="pt-36 pb-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-semibold uppercase text-white">
@@ -23,7 +23,7 @@ export default function Kurumsal() {
             <p className="text-gray-400 mt-2 uppercase text-sm">
               Gedİz / Kütahya 
             </p>
-            <div className="mt-3 h-1 w-16 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
+            <div className="mt-3 h-1 w-16 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto"></div>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">

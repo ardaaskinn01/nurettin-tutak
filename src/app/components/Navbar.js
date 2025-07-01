@@ -21,16 +21,16 @@ export default function Navbar() {
     "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white after:scale-x-0 group-hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300";
 
   return (
-    <nav className="fixed w-full z-50 bg-green-700/60 backdrop-blur-md backdrop-saturate-150 border-b border-green-800 shadow-xl">
+    <nav className="fixed w-full z-50 bg-blue-900/60 backdrop-blur-md backdrop-saturate-150 border-b border-green-800 shadow-xl">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-28">
           {/* Logo */}
           <Link href="/" className="text-2xl font-bold">
             <Image
-              src="/nrtlogo2.png"
+              src="/nrt14.png"
               alt="Nurettin Tutak Logo"
-              width={135}
-              height={30}
+              width={200}
+              height={70}
               priority
               quality={100}
             />
@@ -77,7 +77,7 @@ export default function Navbar() {
 
         {/* Mobil Menü İçeriği */}
         {isMenuOpen && (
-          <div className="md:hidden bg-green-600/90 backdrop-blur-lg border-t border-green-700">
+          <div className="md:hidden bg-blue-900/90 backdrop-blur-lg border-t border-green-700">
             <div className="px-4 py-3 space-y-4">
               {[
                 { href: "/", label: "Ana Sayfa" },
