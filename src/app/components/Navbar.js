@@ -21,7 +21,7 @@ export default function Navbar() {
     "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white after:scale-x-0 group-hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300";
 
   return (
-    <nav className="fixed w-full z-50 bg-blue-900/60 backdrop-blur-md backdrop-saturate-150 border-b border-green-800 shadow-xl">
+    <nav className="fixed w-full z-50 bg-blue-950 backdrop-blur-md backdrop-saturate-150 border-b border-blue-900 shadow-xl">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-28">
           {/* Logo */}
@@ -77,7 +77,7 @@ export default function Navbar() {
 
         {/* Mobil Menü İçeriği */}
         {isMenuOpen && (
-          <div className="md:hidden bg-blue-900/90 backdrop-blur-lg border-t border-green-700">
+          <div className="md:hidden bg-blue-950 backdrop-blur-lg border-t border-blue-900">
             <div className="px-4 py-3 space-y-4">
               {[
                 { href: "/", label: "Ana Sayfa" },
@@ -91,8 +91,8 @@ export default function Navbar() {
                   href={href}
                   className={`block px-4 py-3 rounded-lg text-lg ${
                     isActive(href)
-                      ? "text-white font-semibold bg-green-700/50"
-                      : "text-gray-100 hover:text-white hover:bg-green-700/50"
+                      ? "text-white font-semibold bg-blue-700/50"
+                      : "text-gray-100 hover:text-white hover:bg-blue-700/50"
                   } transition-colors`}
                   onClick={() => setIsMenuOpen(false)}
                 >

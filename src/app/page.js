@@ -209,7 +209,7 @@ export default function Home() {
           <div className="relative max-w-4xl mx-auto z-10">
             <h1 className="text-center mb-12 relative">
               <span className="block text-4xl md:text-6xl font-medium text-white leading-tight mb-4">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
                   {animatedText1}
                   {animatedText1.length < "Geçmişten Gelen Güç".length && (
                     <span className="animate-pulse">|</span>
@@ -223,7 +223,7 @@ export default function Home() {
                 )}
               </span>
               <div
-                className="mt-6 mx-auto w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-600 transition-all duration-1000 delay-1000 scale-x-0 origin-left"
+                className="mt-6 mx-auto w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-800 transition-all duration-1000 delay-1000 scale-x-0 origin-left"
                 style={{
                   animation: animatedText2 === "Geleceğe Sağlam Adım" ? 'scaleIn 1s forwards' : ''
                 }}
@@ -245,7 +245,7 @@ export default function Home() {
                 animation: animatedText2 === "Geleceğe Sağlam Adım" ? 'fadeInUp 1s forwards 1s' : ''
               }}
             >
-              <svg className="w-8 h-8 text-blue-400 mx-auto animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-8 h-8 text-blue-600 mx-auto animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -271,20 +271,20 @@ export default function Home() {
         >
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-12">
-              <span className="text-sm font-medium text-blue-600 tracking-widest">HİZMETLERİMİZ</span>
+              <span className="text-sm font-medium text-blue-800 tracking-widest">HİZMETLERİMİZ</span>
               <h2 className="mt-2 text-3xl font-bold text-gray-900">Uzmanlık Alanlarımız</h2>
-              <div className="mt-4 h-1 w-20 bg-gradient-to-r from-blue-600 to-blue-800 mx-auto"></div>
+              <div className="mt-4 h-1 w-20 bg-gradient-to-r from-blue-700 to-blue-900 mx-auto"></div>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="group bg-gray-50 p-8 rounded-lg border border-gray-200 hover:border-blue-600 transition-all duration-300 hover:shadow-lg"
+                  className="group bg-gray-50 p-8 rounded-lg border border-gray-200 hover:border-blue-800 transition-all duration-300 hover:shadow-lg"
                 >
                   <div className="flex items-center mb-4">
-                    <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3 group-hover:bg-blue-200 transition-colors">
-                      <span className="text-blue-600 text-sm font-semibold">{index + 1}</span>
+                    <div className="w-10 h-10 rounded-full bg-blue-200 flex items-center justify-center mr-3 group-hover:bg-blue-300 transition-colors">
+                      <span className="text-blue-800 text-sm font-semibold">{index + 1}</span>
                     </div>
                     <h3 className="text-lg font-medium text-gray-900">{service.title}</h3>
                   </div>
@@ -302,22 +302,22 @@ export default function Home() {
         >
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-12">
-              <span className="text-xs font-medium text-blue-600 tracking-widest">AVANTAJLARIMIZ</span>
+              <span className="text-xs font-medium text-blue-800 tracking-widest">AVANTAJLARIMIZ</span>
               <h2 className="mt-1 text-2xl font-semibold text-gray-900">
                 Neden Bizi Seçmelisiniz?
               </h2>
-              <div className="mt-3 h-0.5 w-16 bg-gradient-to-r from-blue-600 to-blue-800 mx-auto"></div>
+              <div className="mt-3 h-0.5 w-16 bg-gradient-to-r from-blue-700 to-blue-900 mx-auto"></div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {reasons.map((reason, index) => (
                 <div
                   key={index}
-                  className="group flex items-start bg-white p-6 rounded-lg border border-gray-200 hover:border-blue-600 transition-all duration-300 shadow-sm"
+                  className="group flex items-start bg-white p-6 rounded-lg border border-gray-200 hover:border-blue-800 transition-all duration-300 shadow-sm"
                 >
                   <div className="flex-shrink-0 mt-0.5">
-                    <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors">
-                      <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center group-hover:bg-blue-300 transition-colors">
+                      <svg className="w-4 h-4 text-blue-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
@@ -344,14 +344,9 @@ export default function Home() {
               {stats.map((stat, index) => (
                 <div 
                   key={index}
-                  className="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-lg border border-gray-200 hover:border-blue-600 transition duration-300 count-up-trigger opacity-0 shadow-sm"
+                  className="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-lg border border-gray-200 hover:border-blue-800 transition duration-300 count-up-trigger opacity-0 shadow-sm"
                 >
-                  <div className="mb-4 bg-blue-100 p-3 rounded-full">
-                    <svg className="w-8 h-8 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                      {stat.icon}
-                    </svg>
-                  </div>
-                  <div className="text-4xl font-bold text-blue-600 mb-2">
+                  <div className="text-4xl font-bold text-blue-800 mb-2">
                     {startCountUp && <CountUp end={stat.value} duration={3} suffix={stat.suffix} />}
                   </div>
                   <p className="text-sm text-gray-600">{stat.label}</p>
@@ -376,13 +371,13 @@ export default function Home() {
           </div>
 
           <div className="w-full pl-8 relative z-10">
-            <span className="text-xs font-medium text-blue-400 tracking-widest">TARİHÇEMİZ</span>
+            <span className="text-xs font-medium text-blue-600 tracking-widest">TARİHÇEMİZ</span>
             <h2 className="mt-2 text-2xl font-semibold text-white">Yolculuğumuz</h2>
-            <div className="mt-3 h-0.5 w-16 bg-gradient-to-r from-blue-400 to-blue-600"></div>
+            <div className="mt-3 h-0.5 w-16 bg-gradient-to-r from-blue-600 to-blue-800"></div>
 
             <div className="relative">
               {/* Dikey Çizgi */}
-              <div className="absolute left-2 top-0 bottom-0 w-1 bg-blue-400 z-0"></div>
+              <div className="absolute left-2 top-0 bottom-0 w-1 bg-blue-600 z-0"></div>
 
               {/* Grid yapısı */}
               <div className="space-y-6 relative z-10">
@@ -392,11 +387,11 @@ export default function Home() {
                     className="flex items-start space-x-4"
                   >
                     {/* Nokta */}
-                    <div className="w-4 h-4 rounded-full bg-blue-500 border-2 border-gray-900 shadow-lg relative z-12"></div>
+                    <div className="w-4 h-4 rounded-full bg-blue-700 border-2 border-gray-900 shadow-lg relative z-12"></div>
 
                     {/* İçerik */}
-                    <div className="bg-gray-800/60 p-4 rounded-lg border border-gray-700 hover:border-blue-400 transition-all duration-200 shadow-md flex flex-col h-full w-full max-w-lg">
-                      <p className="text-blue-400 text-sm font-medium mb-1">{item.year}</p>
+                    <div className="bg-gray-800/60 p-4 rounded-lg border border-gray-700 hover:border-blue-600 transition-all duration-200 shadow-md flex flex-col h-full w-full max-w-lg">
+                      <p className="text-blue-600 text-sm font-medium mb-1">{item.year}</p>
                       <h3 className="text-lg font-semibold text-white mb-1">{item.title}</h3>
                       <p className="text-gray-400 text-xs font-light">{item.description}</p>
                     </div>
@@ -416,40 +411,40 @@ export default function Home() {
             <div className="flex flex-col items-center">
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-white mb-4">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
                     Bizimle İletişime Geçin
                   </span>
                 </h2>
                 <p className="text-gray-400 max-w-lg mx-auto mt-3">
                   Projeleriniz için uzman ekibimizle her zaman iletişim kurabilirsiniz
                 </p>
-                <div className="mt-4 h-px w-24 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto"></div>
+                <div className="mt-4 h-px w-24 bg-gradient-to-r from-blue-600 to-blue-800 mx-auto"></div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-2xl">
-                <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-blue-400 transition-all duration-300">
+                <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-blue-600 transition-all duration-300">
                   <div className="flex flex-col items-center text-center space-y-4">
-                    <div className="w-14 h-14 rounded-full bg-blue-500/10 flex items-center justify-center">
-                      <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-14 h-14 rounded-full bg-blue-700/10 flex items-center justify-center">
+                      <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
                     <h3 className="text-lg font-medium text-white">E-posta</h3>
-                    <a href="mailto:nurettintutak@hotmail.com" className="text-gray-300 hover:text-blue-400 transition-colors">
+                    <a href="mailto:nurettintutak@hotmail.com" className="text-gray-300 hover:text-blue-600 transition-colors">
                       nurettintutak@hotmail.com
                     </a>
                   </div>
                 </div>
 
-                <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-blue-400 transition-all duration-300">
+                <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-blue-600 transition-all duration-300">
                   <div className="flex flex-col items-center text-center space-y-4">
-                    <div className="w-14 h-14 rounded-full bg-blue-500/10 flex items-center justify-center">
-                      <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-14 h-14 rounded-full bg-blue-700/10 flex items-center justify-center">
+                      <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
                     </div>
                     <h3 className="text-lg font-medium text-white">Telefon</h3>
-                    <a href="tel:+905467689992" className="text-gray-300 hover:text-blue-400 transition-colors">
+                    <a href="tel:+905467689992" className="text-gray-300 hover:text-blue-600 transition-colors">
                       +90 (546) 768 99 92
                     </a>
                   </div>
@@ -461,9 +456,9 @@ export default function Home() {
                   © {new Date().getFullYear()} Nurettin Tutak. Tüm hakları saklıdır.
                 </p>
                 <div className="mt-2 flex justify-center space-x-4">
-                  <a href="#" className="text-gray-500 hover:text-blue-400 text-xs transition-colors">Gizlilik Politikası</a>
-                  <a href="#" className="text-gray-500 hover:text-blue-400 text-xs transition-colors">Çerezler</a>
-                  <a href="#" className="text-gray-500 hover:text-blue-400 text-xs transition-colors">Şartlar</a>
+                  <a href="#" className="text-gray-500 hover:text-blue-600 text-xs transition-colors">Gizlilik Politikası</a>
+                  <a href="#" className="text-gray-500 hover:text-blue-600 text-xs transition-colors">Çerezler</a>
+                  <a href="#" className="text-gray-500 hover:text-blue-600 text-xs transition-colors">Şartlar</a>
                 </div>
               </div>
             </div>
