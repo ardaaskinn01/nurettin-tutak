@@ -1,53 +1,122 @@
 "use client";
 import Navbar from "../components/Navbar";
 import Link from "next/link";
-import Image from "next/image"; // Image import edildi
+import Image from "next/image";
 
 export default function Projeler() {
   const projects = [
-    { title: "TavşanlI / KÜTAHYA", link: "/projelerimiz/tavsanli" },
-    { title: "NazİLLİ / AYDIN", link: "/projelerimiz/nazilli" },
-    { title: "Karaburun / İZMİR", link: "/projelerimiz/karaburun" },
+    {
+      title: "Tavşanlı / Kütahya",
+      link: "/projelerimiz/tavsanli",
+      description: "90 villalık lüks konut projesi",
+    },
+    {
+      title: "Nazilli / Aydın",
+      link: "/projelerimiz/nazilli",
+      description: "Modern yaşam alanları",
+    },
+    {
+      title: "Karaburun / İzmir",
+      link: "/projelerimiz/karaburun",
+      description: "Deniz manzaralı premium villalar",
+    },
   ];
 
   return (
     <div className="relative min-h-screen">
-      {/* Arka plan resmini bulanıklaştırdık */}
-      <Navbar />
       {/* Arkaplan */}
-            <div
-                className="absolute inset-0 bg-cover bg-fixed bg-center"
-                style={{
-                    backgroundImage: "url('/bg.jpg')",
-                }}
-            />
+      <div className="fixed inset-0 -z-10">
+        <Image
+          src="/bg.jpg"
+          alt="Arkaplan"
+          fill
+          className="object-cover"
+          quality={100}
+          priority
+        />
+        <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+      </div>
 
-            {/* Arkaplan karartması */}
-            <div className="absolute inset-0 bg-black opacity-70" />
+      <Navbar />
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-12">
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl font-semibold text-white">KONUMLAR</h2>
-                    <div className="mt-3 h-1 w-16 bg-gradient-to-r from-blue-600 to-blue-800 mx-auto"></div>
-                </div>
-
-          {/* Cardlar alt alta ve geniş dikdörtgen yapıldı */}
-          <div className="flex flex-col items-center gap-8">
-            {projects.map((project, index) => (
-              <Link
-                href={project.link}
-                key={index}
-                className="group relative overflow-hidden rounded-lg border-l-4 border-orange-500 w-full max-w-2xl h-36 bg-white bg-opacity-80 transition-transform duration-300 hover:scale-160 shadow-xl"
-              >
-                <div className="text-center flex items-center justify-center h-full">
-                  <span className="text-orange-500 text-xl uppercase font-semibold">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-20">
+        {/* Hero Başlık */}
+        <div className="text-center mb-16">
+          <span className="text-sm font-medium text-blue-400 tracking-widest">REFERANSLARIMIZ</span>
+          <h1 className="mt-4 text-4xl md:text-5xl font-bold text-white">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-orange-600">
+              Gurur Duyduğumuz
+            </span>
+            <br />
+            <span className="text-white">Projelerimiz</span>
+          </h1>
+          <div className="mt-6 h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto rounded-full" />
+          <p className="mt-6 text-gray-300 max-w-2xl mx-auto">
+            50 yılı aşkın tecrübemizle hayata geçirdiğimiz özenle tasarlanmış projelerimizi keşfedin
+          </p>
+        </div>
+        {/* Proje Kartları */}
+        <div className="grid gap-8">
+          {projects.map((project, index) => (
+            <Link
+              href={project.link}
+              key={index}
+              className="group relative block overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10"
+            >
+              <div className="relative h-36 w-full bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-xl">
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-300" />
+                <div className="relative z-10 h-full flex flex-col justify-end p-6">
+                  <h2 className="text-xl md:text-2xl font-bold text-white mb-1">
                     {project.title}
-                  </span>
+                  </h2>
+                  <p className="text-gray-300 text-sm mb-4">{project.description}</p>
+                  <div className="flex items-center text-orange-400 group-hover:text-orange-300 transition-colors">
+                    <span className="font-medium text-sm">Detayları Görüntüle</span>
+                    <svg
+                      className="w-4 h-4 ml-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      />
+                    </svg>
+                  </div>
                 </div>
-              </Link>
-            ))}
-          </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+        {/* CTA Bölümü */}
+        <div className="mt-20 text-center">
+          <h3 className="text-2xl font-semibold text-white mb-6">
+            Sizin için özel bir proje tasarlayalım
+          </h3>
+          <Link
+            href="/iletisim"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300"
+          >
+            Ücretsiz Teklif Alın
+            <svg
+              className="w-5 h-5 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </Link>
         </div>
       </div>
+    </div>
   );
 }

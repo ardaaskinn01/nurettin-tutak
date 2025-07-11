@@ -208,11 +208,36 @@ export default function Home() {
               />
             ))}
           </div>
+       </section>
+
+        {/* Tanıtım Videosu Section */}
+        <section
+          ref={el => sectionRefs.current[0] = el}
+          className="relative py-20 bg-gray-900 opacity-0 translate-y-10 transition-all duration-500"
+        >
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <span className="text-xs font-semibold text-blue-400 tracking-widest uppercase">TANITIM</span>
+              <h2 className="mt-4 text-3xl md:text-4xl font-bold text-white">Güleç İnşaat Tanıtım Videosu</h2>
+              <div className="mt-4 h-1 w-20 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto rounded-full"></div>
+            </div>
+
+            <div className="aspect-w-16 aspect-h-9 w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl">
+              <video 
+                className="w-full h-full object-cover" 
+                controls
+                poster="/video-poster.jpg" // Video ön izleme resmi
+              >
+                <source src="/tanitim.mp4" type="video/mp4" />
+                Tarayıcınız video etiketini desteklemiyor.
+              </video>
+            </div>
+          </div>
         </section>
 
         {/* Hizmetlerimiz Section */}
         <section
-          ref={el => sectionRefs.current[0] = el}
+          ref={el => sectionRefs.current[1] = el} // Ref index'ini 1 yapmayı unutmayın
           className="py-20 bg-white opacity-0 translate-y-10 transition-all duration-500"
         >
           <div className="max-w-7xl mx-auto px-6">
@@ -245,7 +270,7 @@ export default function Home() {
 
         {/* Neden Bizi Seçmelisiniz Section */}
         <section
-          ref={el => sectionRefs.current[1] = el}
+          ref={el => sectionRefs.current[2] = el}
           className="py-20 bg-gray-50 opacity-0 translate-y-10 transition-all duration-500"
         >
           <div className="max-w-6xl mx-auto px-6">
@@ -280,7 +305,7 @@ export default function Home() {
 
         {/* Stats Section */}
         <section
-          ref={(el) => sectionRefs.current[2] = el}
+          ref={(el) => sectionRefs.current[3] = el}
           className="py-20 bg-blue-600 opacity-0 translate-y-10 transition-all duration-500 stats-section"
         >
           <div className="max-w-6xl mx-auto px-6">
@@ -302,7 +327,7 @@ export default function Home() {
 
         {/* Tarihçe Section */}
         <section
-          ref={el => sectionRefs.current[3] = el}
+          ref={el => sectionRefs.current[4] = el}
           className="py-20 relative bg-gray-900 opacity-0 translate-y-10 transition-all duration-500"
         >
           <div className="absolute inset-0 z-0">
@@ -345,14 +370,14 @@ export default function Home() {
 
         {/* Referanslar Section */}
         <section
-          ref={el => sectionRefs.current[4] = el}
+          ref={el => sectionRefs.current[5] = el}
           className="py-20 bg-gray-300 translate-y-10 transition-all duration-500 relative"
         >
 
           <div className="relative z-10 max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <span className="text-xs font-semibold text-blue-400 tracking-widest uppercase">REFERANSLAR</span>
-              <h2 className="mt-4 text-3xl md:text-4xl font-bold text-white">Gurur Duyduğumuz Projeler</h2>
+              <h2 className="mt-4 text-3xl md:text-4xl font-bold text-black">Gurur Duyduğumuz Projeler</h2>
               <div className="mt-4 h-1 w-20 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto rounded-full"></div>
             </div>
 
@@ -366,10 +391,10 @@ export default function Home() {
                 <Link
                   href={project.link}
                   key={index}
-                  className="group relative overflow-hidden rounded-lg border-l-4 border-orange-500 w-full max-w-2xl h-36 bg-white bg-opacity-80 transition-transform duration-300 hover:scale-105 shadow-xl"
+                  className="group relative overflow-hidden rounded-lg border-l-4 border-blue-500 w-full max-w-2xl h-36 bg-white bg-opacity-80 transition-transform duration-300 hover:scale-105 shadow-xl"
                 >
                   <div className="text-center flex items-center justify-center h-full">
-                    <span className="text-orange-500 text-xl uppercase font-semibold">
+                    <span className="text-blue-500 text-xl uppercase font-semibold">
                       {project.title}
                     </span>
                   </div>
@@ -393,7 +418,7 @@ export default function Home() {
 
         {/* İletişim Section */}
         <footer
-          ref={el => sectionRefs.current[5] = el}
+          ref={el => sectionRefs.current[6] = el}
           className="w-full py-20 bg-gray-900 opacity-0 translate-y-10 transition-all duration-500"
         >
           <div className="max-w-6xl mx-auto px-6">
@@ -434,18 +459,6 @@ export default function Home() {
                 </p>
 
                 <div className="space-y-4">
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 mt-1">
-                      <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <div className="ml-4">
-                      <h3 className="text-sm font-semibold text-white">Adres</h3>
-                      <p className="text-gray-400 text-sm">Kütahya Organize Sanayi Bölgesi, No:15, Kütahya</p>
-                    </div>
-                  </div>
 
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mt-1">

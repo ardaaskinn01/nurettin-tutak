@@ -1,9 +1,9 @@
 export const metadata = {
-  title: "Nurettin Tutak Kişisel Web Sayfası",
-  description: "Nurettin Tutak Kişisel Web Sayfası",
+  title: "NRT GÜLEÇ GRUP A.Ş. Web Sayfası",
+  description: "NRT GÜLEÇ GRUP A.Ş. Web Sayfası",
   icons: {
-    icon: "/nrtlogo.png",
-    shortcut: "/nrtlogo.png",
-    apple: "/nrtlogo.png",
+    icon: "/nrt15.png",
+    shortcut: "/nrt15.png",
+    apple: "/nrt15.png",
   },
 };
