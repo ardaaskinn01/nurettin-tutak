@@ -440,9 +440,9 @@ export default function Home() {
                 <div className="mt-auto">
                   <p className="text-gray-500 mb-4">© {new Date().getFullYear()} NRT Grup. Tüm hakları saklıdır.</p>
                   <div className="flex space-x-4">
-                    <a href="#" className="text-gray-500 hover:text-white transition-colors text-sm">Gizlilik Politikası</a>
-                    <a href="#" className="text-gray-500 hover:text-white transition-colors text-sm">Çerezler</a>
-                    <a href="#" className="text-gray-500 hover:text-white transition-colors text-sm">Şartlar</a>
+                    <a href="/privacy" className="text-gray-500 hover:text-white transition-colors text-sm">Gizlilik Politikası</a>
+                    <a href="/cookies" className="text-gray-500 hover:text-white transition-colors text-sm">Çerezler</a>
+                    <a href="/terms" className="text-gray-500 hover:text-white transition-colors text-sm">Şartlar</a>
                   </div>
                 </div>
               </div>

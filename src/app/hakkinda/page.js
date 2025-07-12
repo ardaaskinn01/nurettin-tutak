@@ -69,47 +69,88 @@ export default function Hakkinda() {
             </div>
           </div>
 
-          {/* Slogan */}
-          <div className="mt-24 text-center">
-            <h2 className="text-3xl font-bold text-white tracking-wide">
-              Geçmişten aldığımız güçle geleceği inşa ediyoruz.
-            </h2>
-          </div>
-
-          <div className="mt-24 text-center">
-            <h2 className="text-3xl font-bold text-white tracking-wide">
-              Yönetim Kurulu
-            </h2>
-          </div>
-
-          {/* Profil Kartları */}
-          <div className="mt-6 grid md:grid-cols-2 gap-12">
-            {/* Nurettin */}
-            <div className="text-center bg-gray-800/80 p-6 rounded-2xl border border-gray-700 shadow-sm backdrop-blur-sm">
-              <div className="w-36 h-36 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-300">
-                <Image
-                  src="/hasan.png"
-                  alt=""
-                  width={100}
-                  height={200}
-                  className="object-contain w-full h-full"
-                />
-              </div>
-              <h3 className="text-lg font-semibold text-white">Hasan Tutak</h3>
+          {/* Yönetim Kurulu */}
+          <div className="mt-24">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold text-white mb-4">Yönetim Kurulu</h2>
+              <div className="mt-4 h-1 w-20 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto rounded-full" />
             </div>
 
-            {/* Hasan */}
-            <div className="text-center bg-gray-800/80 p-6 rounded-2xl border border-gray-700 shadow-sm backdrop-blur-sm">
-              <div className="w-36 h-36 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-300">
-                <Image
-                  src="/nurettin.png"
-                  alt=""
-                  width={100}
-                  height={200}
-                  className="object-contain w-full h-full"
-                />
+            <div className="flex flex-col items-center max-w-2xl mx-auto space-y-12">
+              {/* Hasan Tutak */}
+              <div className="group w-full flex flex-col items-center text-center">
+                <div className="relative w-36 h-36 mb-6 rounded-full overflow-hidden border-4 border-gold-500 shadow-lg">
+                  <Image
+                    src="/hasan4.png"
+                    alt="Hasan Tutak"
+                    fill
+                    className="object-contain"
+                    quality={100}
+                  />
+                </div>
+                <div className="bg-gray-900/80 border border-gray-700 rounded-xl p-6 w-full backdrop-blur-sm">
+                  <h3 className="text-2xl font-bold text-white mb-1">Hasan Tutak</h3>
+                  <p className="text-blue-400 font-medium">Tutakoğulları Sanayi ve Ticaret Ltd. Şti. Kurucusu</p>
+                  <div className="mt-4 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50"></div>
+                  <p className="text-gray-300 mt-4 text-sm">
+                    1977'den bu yana sektörde öncü isim, temelleri atan vizyoner lider
+                  </p>
+                </div>
               </div>
-              <h3 className="text-lg font-semibold text-white">Nurettin Tutak</h3>
+
+              {/* Ümit Güleç */}
+              <div className="group w-full flex flex-col items-center text-center">
+                <div className="relative w-40 h-40 mb-6 rounded-full overflow-hidden border-4 border-blue-400 shadow-lg">
+                  <Image
+                    src="/ümit2.png"
+                    alt="Ümit Güleç"
+                    fill
+                    className="object-contain"
+                    quality={100}
+                  />
+                </div>
+                <div className="bg-gray-900/80 border border-gray-700 rounded-xl p-6 w-full backdrop-blur-sm">
+                  <h3 className="text-2xl font-bold text-white mb-1">Ümit Güleç</h3>
+                  <p className="text-blue-400 font-medium">Güleç İnşaat A.Ş. Yönetim Kurulu Başkanı</p>
+                  <div className="mt-4 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50"></div>
+                  <p className="text-gray-300 mt-4 text-sm">
+                    Modern yönetim anlayışıyla şirketimizi geleceğe taşıyan lider
+                  </p>
+                </div>
+              </div>
+
+              {/* Nurettin Tutak */}
+              <div className="group w-full flex flex-col items-center text-center">
+                <div className="relative w-36 h-36 mb-6 rounded-full overflow-hidden border-4 border-blue-300 shadow-lg">
+                  <Image
+                    src="/nurettin.png"
+                    alt="Nurettin Tutak"
+                    fill
+                    className="object-contain"
+                    quality={100}
+                  />
+                </div>
+                <div className="bg-gray-900/80 border border-gray-700 rounded-xl p-6 w-full backdrop-blur-sm">
+                  <h3 className="text-2xl font-bold text-white mb-1">Nurettin Tutak</h3>
+                  <p className="text-blue-400 font-medium">NRT İnşaat A.Ş. Yönetim Kurulu Başkanı</p>
+                  <div className="mt-4 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50"></div>
+                  <p className="text-gray-300 mt-4 text-sm">
+                    Yenilikçi projelerle şirketimizi büyüten ikinci kuşak temsilcisi
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Slogan */}
+          <div className="mt-24 text-center">
+            <div className="inline-block px-8 py-8 bg-gradient-to-r from-blue-900/50 to-blue-800/50 border border-gray-800 rounded-2xl backdrop-blur-sm shadow-lg">
+              <h2 className="text-2xl md:text-3xl font-bold text-white italic">
+                "Geçmişten aldığımız güçle, geleceği inşa ediyoruz"
+              </h2>
+              <div className="mt-4 flex justify-center">
+                <div className="h-1 w-16 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full"></div>
+              </div>
             </div>
           </div>
         </div>

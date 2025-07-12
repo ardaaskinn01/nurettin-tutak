@@ -59,21 +59,6 @@ export default function Kurumsal() {
               </div>
             ))}
           </div>
-
-          {/* İstatistikler */}
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { value: "15.000", label: "m² Kapalı Alan" },
-              { value: "100+", label: "Çalışan" },
-              { value: "24/7", label: "Kesintisiz Üretim" },
-              { value: "ISO 9001", label: "Kalite Belgesi" }
-            ].map((stat, index) => (
-              <div key={index} className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center backdrop-blur-sm">
-                <p className="text-3xl font-bold text-blue-400 mb-2">{stat.value}</p>
-                <p className="text-gray-300 text-sm">{stat.label}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </main>
 
