@@ -89,7 +89,6 @@ export default function Iletisim() {
                 <h3 className="text-2xl font-semibold text-gray-900 mb-6">İletişim Bilgileri</h3>
                 
                 <div className="space-y-6">
-
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mt-1">
                       <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center">
@@ -116,9 +115,14 @@ export default function Iletisim() {
                     </div>
                     <div className="ml-4">
                       <h4 className="text-sm font-medium text-gray-500">Telefon</h4>
-                      <a href="tel:+905467689992" className="text-blue-600 hover:text-blue-800 transition-colors mt-1 block">
-                        +90 (546) 768 99 92
-                      </a>
+                      <div className="space-y-2">
+                        <a href="tel:+905467689992" className="text-blue-600 hover:text-blue-800 transition-colors block">
+                          Nurettin Tutak: +90 (546) 768 99 92
+                        </a>
+                        <a href="tel:+905342855356" className="text-blue-600 hover:text-blue-800 transition-colors block">
+                          Ümit Güleç: +90 (534) 285 83 56
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
