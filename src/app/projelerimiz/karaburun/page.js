@@ -15,7 +15,7 @@ export default function Nazilli() {
       <TopContactBar />
       <Navbar />
 
-      <div className="absolute top-24 left-6 z-20">
+      <div className="absolute top-32 left-6 z-20">
         <button
           onClick={() => router.back()}
           className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-600"
@@ -35,7 +35,7 @@ export default function Nazilli() {
       {/* Arkaplan karartması */}
       <div className="absolute inset-0 bg-black opacity-70" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-36 pb-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-44 pb-12">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-semibold text-white">KARABURUN / İZMİR</h2>
           <div className="mt-3 h-1 w-16 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto"></div>
