@@ -8,12 +8,12 @@ export default function Projeler() {
     {
       title: "Tavşanlı / Kütahya",
       link: "/projelerimiz/tavsanli",
-      description: "90 villalık lüks konut projesi",
+      description: "Modern yaşam alanları",
     },
     {
       title: "Nazilli / Aydın",
       link: "/projelerimiz/nazilli",
-      description: "Modern yaşam alanları",
+      description: "90 villalık lüks konut projesi",
     },
     {
       title: "Karaburun / İzmir",
