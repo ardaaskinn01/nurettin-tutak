@@ -283,7 +283,7 @@ export default function Home() {
         >
           <div className="max-w-5xl mx-auto px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-light text-gray-800">Neden NRT Grup?</h2>
+              <h2 className="text-3xl font-light text-gray-800">Neden Biz?</h2>
               <p className="mt-3 text-gray-500 max-w-2xl mx-auto">Tecrübemiz ve kalite anlayışımızla fark yaratıyoruz</p>
             </div>
 
