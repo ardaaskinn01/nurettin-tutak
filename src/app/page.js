@@ -310,31 +310,9 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section
-          ref={(el) => sectionRefs.current[3] = el}
-          className="py-20 bg-blue-600 opacity-0 translate-y-10 transition-all duration-500 stats-section"
-        >
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center justify-center p-8 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:border-white/40 transition duration-300 count-up-trigger opacity-0"
-                >
-                  <div className="text-4xl font-bold text-white mb-2">
-                    {startCountUp && <CountUp end={stat.value} duration={3} suffix={stat.suffix} />}
-                  </div>
-                  <p className="text-white/90 text-sm font-medium">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Tarihçe Section */}
         <section
-          ref={el => sectionRefs.current[4] = el}
+          ref={el => sectionRefs.current[3] = el}
           className="py-20 relative bg-gray-900 opacity-0 translate-y-10 transition-all duration-500"
         >
           <div className="absolute inset-0 z-0">
@@ -376,7 +354,7 @@ export default function Home() {
         </section>
 
         <section
-          ref={el => sectionRefs.current[5] = el}
+          ref={el => sectionRefs.current[4] = el}
           className="py-20 bg-gray-50 translate-y-10 transition-all duration-500 relative"
         >
           <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -392,19 +370,22 @@ export default function Home() {
                 {
                   title: "TAVŞANLI / KÜTAHYA",
                   link: "/projelerimiz/tavsanli",
+                  description: "Endüstriyel tesis projesi"
                 },
                 {
                   title: "NAZİLLİ / AYDIN",
                   link: "/projelerimiz/nazilli",
+                  description: "Kamu binası restorasyonu"
                 },
                 {
                   title: "KARABURUN / İZMİR",
                   link: "/projelerimiz/karaburun",
+                  description: "Lüks rezidans kompleksi"
                 }
               ].map((project, index) => (
                 <div key={index} className="group">
                   <Link href={project.link} className="block h-full">
-                    <div className="bg-white p-6 h-full border border-gray-200 hover:border-gray-300 transition-all duration-300 shadow-sm hover:shadow-md">
+                    <div className="bg-white p-6 h-full border border-gray-200 hover:border-gray-300 transition-all duration-300 shadow-sm hover:shadow-md rounded-lg">
                       <div className="mb-4 flex justify-between items-start">
                         <h3 className="text-lg font-medium text-gray-800">{project.title}</h3>
                       </div>
@@ -424,13 +405,34 @@ export default function Home() {
             <div className="text-center mt-16">
               <Link
                 href="/projelerimiz"
-                className="inline-flex items-center px-6 py-3 border border-blue-300 text-blue-700 bg-white hover:bg-blue-50 hover:border-blue-400 font-medium rounded-sm transition-all duration-300"
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-md hover:shadow-lg"
               >
                 Tüm Detaylar
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </Link>
+            </div>
+          </div>
+        </section>
+
+        <section
+          ref={(el) => sectionRefs.current[5] = el}
+          className="py-20 bg-blue-950 opacity-0 translate-y-10 transition-all duration-500 stats-section"
+        >
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {stats.map((stat, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center justify-center p-8 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:border-white/40 transition duration-300 count-up-trigger opacity-0"
+                >
+                  <div className="text-4xl font-bold text-white mb-2">
+                    {startCountUp && <CountUp end={stat.value} duration={3} suffix={stat.suffix} />}
+                  </div>
+                  <p className="text-white/90 text-sm font-medium">{stat.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -661,7 +663,7 @@ const timeline = [
   },
   {
     year: "2025",
-    title: "Yeni Hedefler",
-    description: "Kütahya Gediz'de yeni üretim tesisi ve uluslararası projeler planlanmaktadır."
+    title: "Yeni Ortaklık Projesi",
+    description: "Güleç İnşaat ile güçler birleştirilmiş, yeni projelerin ilk adımlarına başlanmıştır."
   }
 ];

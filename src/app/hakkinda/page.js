@@ -17,10 +17,8 @@ export default function Hakkinda() {
         />
         <div className="absolute inset-0 bg-black opacity-65"></div>
       </div>
-
       <TopContactBar />
       <Navbar />
-
       {/* İçerik (Blur olmayan kısım) */}
       <div className="relative z-20 flex-grow pt-40 px-6 md:px-20 lg:px-36 text-white">
         <div className="max-w-7xl mx-auto">
@@ -41,13 +39,16 @@ export default function Hakkinda() {
               2000 yılı itibarıyla, ikinci kuşak temsilcimiz Nurettin Tutak liderliğinde önemli bir vizyon değişimi yaşanmış; şirket yalnızca PVC ve cam üretimiyle sınırlı kalmayıp inşaat, müteahhitlik, taşımacılık, otomotiv alım satımı, araç kiralama ve devlet ihaleleri gibi farklı alanlara da açılmıştır. Türkiye'nin 81 iline yayılan hizmet ağıyla büyük ölçekli projelere ve güçlü iş ortaklıklarına imza atılmıştır.
             </p>
             <p>
-              Bu süreçte kurulan NRT Grup İnşaat A.Ş., tek ortaklı bir yapı olarak Nurettin Tutak öncülüğünde; kentsel dönüşüm projeleri, konut ve villa inşaatları üzerine uzmanlaşmıştır. Şu anda Aydın Nazilli'de hayata geçirilen 90 villalık proje, modern mimari anlayışı ve yüksek yapı kalitesi ile bölgeye değer katmaktadır. Aynı zamanda Kuşadası, Çeşme, Urla ve Çiğli gibi bölgelerde taşeronluk inşaat faaliyetleriyle aktif olarak yer almaktadır.
+              Bu süreçte kurulan NRT İnşaat A.Ş., tek ortaklı bir yapı olarak Nurettin Tutak öncülüğünde; kentsel dönüşüm projeleri, konut ve villa inşaatları üzerine uzmanlaşmıştır. Şu anda Aydın Nazilli'de hayata geçirilen 90 villalık proje, modern mimari anlayışı ve yüksek yapı kalitesi ile bölgeye değer katmaktadır. Aynı zamanda Kuşadası, Çeşme, Urla ve Çiğli gibi bölgelerde taşeronluk inşaat faaliyetleriyle aktif olarak yer almaktadır.
             </p>
             <p>
               Genişleyen faaliyet alanlarımız doğrultusunda şirketimiz, taşımacılık ve araç kiralama hizmetlerini de başarıyla sürdürmektedir. Almanya, Kıbrıs, Bodrum ve İzmir merkezli organizasyonumuzla, makam araçları da dahil olmak üzere toplam 950 araçlık filomuz, bireysel ve kurumsal müşterilere güvenli ve konforlu çözümler sunmaktadır.
             </p>
             <p>
               Ayrıca, mimarlık, teknik çizim, harita mühendisliği ve proje geliştirme alanlarında da faaliyet göstererek sadece uygulamada değil, tasarım aşamasında da yüksek standartlarda hizmet veriyoruz.
+            </p>
+            <p>
+              2025 Yılında Güleç İnşaat ile kurulan ortaklık sonucu yeni projelerin taslak çalışmaları yapılmaktadır.
             </p>
           </div>
 
