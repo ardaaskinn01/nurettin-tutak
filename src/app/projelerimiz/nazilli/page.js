@@ -19,7 +19,7 @@ export default function Nazilli() {
       <div className="absolute top-32 left-6 z-20">
         <button
           onClick={() => router.back()}
-          className="bg-orange-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-orange-600"
+          className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-600"
         >
           ← Geri
         </button>
@@ -48,10 +48,10 @@ export default function Nazilli() {
             <Link
               href={project.link}
               key={index}
-              className="group relative overflow-hidden rounded-lg border-l-4 border-orange-500 w-full max-w-2xl h-28 bg-white bg-opacity-80 transition-transform duration-300 hover:scale-105 shadow-xl"
+              className="group relative overflow-hidden rounded-lg border-l-4 border-blue-500 w-full max-w-2xl h-28 bg-white bg-opacity-80 transition-transform duration-300 hover:scale-105 shadow-xl"
             >
               <div className="flex flex-col justify-center items-center h-full">
-                <span className="text-orange-500 text-xl uppercase font-semibold">
+                <span className="text-blue-500 text-xl uppercase font-semibold">
                   {project.title}
                 </span>
                 <span className="text-gray-600 text-sm font-light mt-1">

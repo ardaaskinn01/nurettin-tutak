@@ -44,7 +44,7 @@ export default function Projeler() {
         <div className="text-center mb-16">
           <span className="text-sm font-medium text-blue-400 tracking-widest">REFERANSLARIMIZ</span>
           <h1 className="mt-4 text-4xl md:text-5xl font-bold text-white">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-orange-600">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
               Gurur Duyduğumuz
             </span>
             <br />
@@ -61,7 +61,7 @@ export default function Projeler() {
             <Link
               href={project.link}
               key={index}
-              className="group relative block overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10"
+              className="group relative block overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-cyan-400/50"
             >
               <div className="relative h-36 w-full bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-xl">
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-300" />
@@ -70,7 +70,7 @@ export default function Projeler() {
                     {project.title}
                   </h2>
                   <p className="text-gray-300 text-sm mb-4">{project.description}</p>
-                  <div className="flex items-center text-orange-400 group-hover:text-orange-300 transition-colors">
+                  <div className="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
                     <span className="font-medium text-sm">Detayları Görüntüle</span>
                     <svg
                       className="w-4 h-4 ml-2"
@@ -98,7 +98,7 @@ export default function Projeler() {
           </h3>
           <Link
             href="/iletisim"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300"
           >
             Ücretsiz Teklif Alın
             <svg

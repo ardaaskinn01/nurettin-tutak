@@ -73,7 +73,7 @@ export default function Iletisim() {
           <div className="text-center mb-16">
             <span className="text-sm font-medium text-blue-600 tracking-widest">İLETİŞİM</span>
             <h1 className="mt-4 text-4xl md:text-5xl font-bold text-gray-900">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">Bizimle İletişime Geçin</span>
+              <span className="bg-clip-text text-transparent bg-white">Bizimle İletişime Geçin</span>
             </h1>
             <div className="mt-6 h-1 w-24 bg-gradient-to-r from-blue-600 to-blue-800 mx-auto rounded-full" />
             <p className="mt-6 text-gray-200 max-w-2xl mx-auto">

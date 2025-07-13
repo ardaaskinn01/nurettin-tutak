@@ -42,13 +42,13 @@ export default function TermsPage() {
 
                         <h2>Kapsam ve Değişiklikler</h2>
                         <p>
-                            Bu İnternet sitesi, NRT İnşaat A.Ş. & Güleç İnşaat A.Ş. tarafından işletilmektedir. Bu Kullanım Koşulları, İnternet sitesi kullanımı sırasında uygulanacak kuralları ve tarafların hak ve yükümlülüklerini belirlemektedir. İnternet sitesini kullanmaya devam ettiğiniz takdirde bu koşulları kabul ettiğini varsayılacaktır.
+                            Bu İnternet sitesi, NRT Güleç Grup A.Ş. tarafından işletilmektedir. Bu Kullanım Koşulları, İnternet sitesi kullanımı sırasında uygulanacak kuralları ve tarafların hak ve yükümlülüklerini belirlemektedir. İnternet sitesini kullanmaya devam ettiğiniz takdirde bu koşulları kabul ettiğini varsayılacaktır.
 
                         </p>
 
                         <h2>Hizmet İçeriği ve Kullanım</h2>
                         <p>
-                            Bu İnternet sitesi tarafından sunulan hizmetler, yasal mevzuatlara uygun bir şekilde kullanılmak üzere tasarlanmıştır. Kullanıcılar, İnternet sitesini kullanırken tüm yasa, tüzük ve yönetmelikler ile uluslararası sözleşmelere ve teamüllere uymakla yükümlüdür. NRT İnşaat A.Ş. & Güleç İnşaat A.Ş., herhangi bir zamanda, herhangi bir nedenle, önceden bildirimde bulunmaksızın hizmetlerini değiştirme, askıya alma veya sonlandırma hakkını saklı tutar.
+                            Bu İnternet sitesi tarafından sunulan hizmetler, yasal mevzuatlara uygun bir şekilde kullanılmak üzere tasarlanmıştır. Kullanıcılar, İnternet sitesini kullanırken tüm yasa, tüzük ve yönetmelikler ile uluslararası sözleşmelere ve teamüllere uymakla yükümlüdür. NRT Güleç Grup A.Ş., herhangi bir zamanda, herhangi bir nedenle, önceden bildirimde bulunmaksızın hizmetlerini değiştirme, askıya alma veya sonlandırma hakkını saklı tutar.
                         </p>
 
                         <h2>Kullanıcı Yükümlülükleri</h2>
@@ -72,7 +72,7 @@ export default function TermsPage() {
 
                         <h2>Fikri Mülkiyet Hakları</h2>
                         <p>
-                            İnternet sitesinde yer alan tüm içerik, tasarım, logo, yazılım ve sair materyaller, NRT İnşaat A.Ş. & Güleç İnşaat A.Ş. fikri mülkiyet ve telif haklarına haiz olup, fikir ve sanat eserleri kanunu ve sair yasal mevzuatlarca korunmaktadır. Bu içeriklerin izinsiz kullanımı, kopyalanması, çoğaltılması, değiştirilmesi veya dağıtılması yasaktır.
+                            İnternet sitesinde yer alan tüm içerik, tasarım, logo, yazılım ve sair materyaller, NRT Güleç Grup A.Ş. fikri mülkiyet ve telif haklarına haiz olup, fikir ve sanat eserleri kanunu ve sair yasal mevzuatlarca korunmaktadır. Bu içeriklerin izinsiz kullanımı, kopyalanması, çoğaltılması, değiştirilmesi veya dağıtılması yasaktır.
                         </p>
 
                         <h2>Genel Hükümler</h2>
@@ -83,14 +83,14 @@ export default function TermsPage() {
                             <li>İşlem ve eylemlerindeki hukuki ve cezai sorumluluğun kendilerine ait olduğunu,</li>
                             <li>İçeriklerin güncelliği konusunda tüm çabalara rağmen farklılıklar olabileceğini,</li>
                             <li>
-                                Üçüncü taraf bağlantıların içeriklerinden NRT İnşaat A.Ş. & Güleç İnşaat A.Ş.&apos;nin sorumlu olmadığını,
+                                Üçüncü taraf bağlantıların içeriklerinden NRT Güleç Grup A.Ş.&apos;nin sorumlu olmadığını,
                             </li>
                             <li>Virüslere karşı gerekli güvenlik önlemlerini kendilerinin alması gerektiğini</li>
                         </ul>
 
                         <h2>Sorumluluk Sınırları</h2>
                         <p>
-                            NRT İnşaat A.Ş. & Güleç İnşaat A.Ş., İnternet sitesinin kullanımından doğabilecek doğrudan, dolaylı, özel veya cezai hiçbir zarardan sorumlu tutulamaz. İnternet sitemiz, "olduğu gibi" sunulmaktadır ve kesintisiz veya hatasız çalışacağına dair herhangi bir garanti verilmemektedir.
+                            NRT Güleç Grup A.Ş., İnternet sitesinin kullanımından doğabilecek doğrudan, dolaylı, özel veya cezai hiçbir zarardan sorumlu tutulamaz. İnternet sitemiz, "olduğu gibi" sunulmaktadır ve kesintisiz veya hatasız çalışacağına dair herhangi bir garanti verilmemektedir.
                         </p>
 
                         <h2>Uyuşmazlık Çözümü</h2>

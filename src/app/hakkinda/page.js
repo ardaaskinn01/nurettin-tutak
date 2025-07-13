@@ -92,9 +92,6 @@ export default function Hakkinda() {
                   <h3 className="text-2xl font-bold text-white mb-1">Hasan Tutak</h3>
                   <p className="text-blue-400 font-medium">Tutakoğulları Sanayi ve Ticaret Ltd. Şti. Kurucusu</p>
                   <div className="mt-4 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50"></div>
-                  <p className="text-gray-300 mt-4 text-sm">
-                    1977'den bu yana sektörde öncü isim, temelleri atan vizyoner lider
-                  </p>
                 </div>
               </div>
 
@@ -113,9 +110,6 @@ export default function Hakkinda() {
                   <h3 className="text-2xl font-bold text-white mb-1">Ümit Güleç</h3>
                   <p className="text-blue-400 font-medium">Güleç İnşaat A.Ş. Yönetim Kurulu Başkanı</p>
                   <div className="mt-4 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50"></div>
-                  <p className="text-gray-300 mt-4 text-sm">
-                    Modern yönetim anlayışıyla şirketimizi geleceğe taşıyan lider
-                  </p>
                 </div>
               </div>
 
@@ -134,9 +128,6 @@ export default function Hakkinda() {
                   <h3 className="text-2xl font-bold text-white mb-1">Nurettin Tutak</h3>
                   <p className="text-blue-400 font-medium">NRT İnşaat A.Ş. Yönetim Kurulu Başkanı</p>
                   <div className="mt-4 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50"></div>
-                  <p className="text-gray-300 mt-4 text-sm">
-                    Yenilikçi projelerle şirketimizi büyüten ikinci kuşak temsilcisi
-                  </p>
                 </div>
               </div>
             </div>
