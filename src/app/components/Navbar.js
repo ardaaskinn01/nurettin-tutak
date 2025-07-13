@@ -20,8 +20,8 @@ export default function Navbar() {
   const inactiveLinkUnderline =
     "after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-white group-hover:after:w-4/5 group-hover:after:scale-x-100 after:origin-center after:transition-all after:duration-300";
 
-  return (
-    <nav className="fixed top-8 w-full z-50 bg-gradient-to-r from-blue-950 to-blue-800 backdrop-blur-md backdrop-saturate-150 border-b border-blue-800/50 shadow-lg">
+    return (
+    <nav className="fixed top-10 xs:top-8 w-full z-50 bg-gradient-to-r from-blue-950 to-blue-800 backdrop-blur-md backdrop-saturate-150 border-b border-blue-800/50 shadow-lg">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-24">
           {/* Logo */}

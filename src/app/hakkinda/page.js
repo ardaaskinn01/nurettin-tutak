@@ -22,7 +22,7 @@ export default function Hakkinda() {
       <Navbar />
 
       {/* İçerik (Blur olmayan kısım) */}
-      <div className="relative z-20 flex-grow pt-32 px-6 md:px-20 lg:px-36 text-white">
+      <div className="relative z-20 flex-grow pt-40 px-6 md:px-20 lg:px-36 text-white">
         <div className="max-w-7xl mx-auto">
           {/* Başlık */}
           <h1 className="text-4xl font-bold text-white mb-4 md:mb-8 lg:mb-12 border-b-4 border-blue-400 inline-block pb-2">

@@ -51,7 +51,7 @@ export default function Kurumsal() {
       <TopContactBar />
       <Navbar />
 
-      <main className="pt-32 pb-20">
+      <main className="pt-40 pb-20">
         <div className="max-w-7xl mx-auto px-6">
           {/* Başlık Bölümü */}
           <div className="text-center mb-16">

@@ -40,7 +40,7 @@ export default function Projeler() {
       <TopContactBar />
       <Navbar />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-40 pb-20">
         {/* Hero Başlık */}
         <div className="text-center mb-16">
           <span className="text-sm font-medium text-blue-400 tracking-widest">REFERANSLARIMIZ</span>

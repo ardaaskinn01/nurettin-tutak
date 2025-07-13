@@ -516,7 +516,7 @@ export default function Home() {
             <div className="border-t border-gray-800 mt-12 pt-8">
               <div className="flex flex-col md:flex-row justify-between items-center">
                 <p className="text-gray-500 text-sm text-center md:text-left">
-                  © {new Date().getFullYear()} NRT Grup İnşaat ve Müteahhitlik. Tüm hakları saklıdır.
+                  © {new Date().getFullYear()} NRT Güleç Grup A.Ş. Tüm hakları saklıdır.
                 </p>
                 <div className="flex space-x-6 mt-4 md:mt-0">
                   <a href="/privacy" className="text-gray-500 hover:text-white transition-colors text-sm">Gizlilik Politikası</a>

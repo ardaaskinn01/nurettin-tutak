@@ -68,7 +68,7 @@ export default function Iletisim() {
       <TopContactBar />
       <Navbar />
 
-      <main className="flex-grow py-32 px-4 sm:px-6 lg:px-8 relative">
+      <main className="flex-grow py-40 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-6xl mx-auto">
           {/* Başlık */}
           <div className="text-center mb-16">
