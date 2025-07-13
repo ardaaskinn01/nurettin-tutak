@@ -375,46 +375,58 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Referanslar Section */}
         <section
           ref={el => sectionRefs.current[5] = el}
-          className="py-20 bg-gray-300 translate-y-10 transition-all duration-500 relative"
+          className="py-20 bg-gray-50 translate-y-10 transition-all duration-500 relative"
         >
-
           <div className="relative z-10 max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
-              <span className="text-xs font-semibold text-blue-400 tracking-widest uppercase">REFERANSLAR</span>
-              <h2 className="mt-4 text-3xl md:text-4xl font-bold text-black">Gurur Duyduğumuz Projeler</h2>
-              <div className="mt-4 h-1 w-20 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto rounded-full"></div>
+              <span className="text-xs font-semibold text-gray-500 tracking-widest uppercase">REFERANSLARIMIZ</span>
+              <h2 className="mt-4 text-3xl md:text-4xl font-light text-gray-800">Gerçekleştirdiğimiz Projeler</h2>
+              <div className="mt-6 h-px w-24 bg-gray-300 mx-auto"></div>
             </div>
 
-            {/* Dikey Kartlar */}
-            <div className="flex flex-col items-center gap-8">
+            {/* Grid Yapısı */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { title: "TAVŞANLI / KÜTAHYA", link: "/projelerimiz/tavsanli" },
-                { title: "NAZİLLİ / AYDIN", link: "/projelerimiz/nazilli" },
-                { title: "KARABURUN / İZMİR", link: "/projelerimiz/karaburun" }
+                {
+                  title: "TAVŞANLI / KÜTAHYA",
+                  link: "/projelerimiz/tavsanli",
+                },
+                {
+                  title: "NAZİLLİ / AYDIN",
+                  link: "/projelerimiz/nazilli",
+                },
+                {
+                  title: "KARABURUN / İZMİR",
+                  link: "/projelerimiz/karaburun",
+                }
               ].map((project, index) => (
-                <Link
-                  href={project.link}
-                  key={index}
-                  className="group relative overflow-hidden rounded-lg border-l-4 border-blue-500 w-full max-w-2xl h-36 bg-white bg-opacity-80 transition-transform duration-300 hover:scale-105 shadow-xl"
-                >
-                  <div className="text-center flex items-center justify-center h-full">
-                    <span className="text-blue-500 text-xl uppercase font-semibold">
-                      {project.title}
-                    </span>
-                  </div>
-                </Link>
+                <div key={index} className="group">
+                  <Link href={project.link} className="block h-full">
+                    <div className="bg-white p-6 h-full border border-gray-200 hover:border-gray-300 transition-all duration-300 shadow-sm hover:shadow-md">
+                      <div className="mb-4 flex justify-between items-start">
+                        <h3 className="text-lg font-medium text-gray-800">{project.title}</h3>
+                      </div>
+                      <p className="text-gray-600 text-sm mb-4">{project.description}</p>
+                      <div className="text-blue-600 text-sm font-medium flex items-center mt-auto pt-4 border-t border-gray-100 group-hover:border-gray-200 transition-colors">
+                        Proje detayları
+                        <svg className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
               ))}
             </div>
 
-            <div className="text-center mt-12">
+            <div className="text-center mt-16">
               <Link
                 href="/projelerimiz"
-                className="inline-flex items-center bg-white px-6 py-3 border border-white text-black hover:bg-gray-600 hover:text-gray-900 font-medium rounded-lg transition-colors duration-300"
+                className="inline-flex items-center px-6 py-3 border border-blue-300 text-blue-700 bg-white hover:bg-blue-50 hover:border-blue-400 font-medium rounded-sm transition-all duration-300"
               >
-                Tüm Projelerimiz
+                Tüm Detaylar
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
@@ -423,50 +435,54 @@ export default function Home() {
           </div>
         </section>
 
-        {/* İletişim Section */}
         <footer
           ref={el => sectionRefs.current[6] = el}
-          className="w-full py-20 bg-gray-900 opacity-0 translate-y-10 transition-all duration-500"
+          className="w-full py-16 bg-gray-900 opacity-0 translate-y-10 transition-all duration-500"
         >
           <div className="max-w-6xl mx-auto px-6">
-            <div className="flex flex-col md:flex-row gap-12">
-              {/* Sol Bölüm - Logo ve Telif Hakkı */}
-              <div className="md:w-1/2 flex flex-col">
-                <div className="mb-8">
-                  <Link href="/" className="inline-block">
-                    <Image
-                      src="/nrt14.png"
-                      alt="NRT Grup Logo"
-                      width={240}
-                      height={80}
-                      className="object-contain"
-                    />
-                  </Link>
-                </div>
-
-                <div className="mt-auto">
-                  <p className="text-gray-500 mb-4">© {new Date().getFullYear()} NRT Grup. Tüm hakları saklıdır.</p>
-                  <div className="flex space-x-4">
-                    <a href="/privacy" className="text-gray-500 hover:text-white transition-colors text-sm">Gizlilik Politikası</a>
-                    <a href="/cookies" className="text-gray-500 hover:text-white transition-colors text-sm">Çerezler</a>
-                    <a href="/terms" className="text-gray-500 hover:text-white transition-colors text-sm">Şartlar</a>
-                  </div>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              {/* Logo ve Slogan */}
+              <div className="flex flex-col">
+                <Link href="/" className="inline-block mb-6">
+                  <Image
+                    src="/nrt14.png"
+                    alt="NRT Grup Logo"
+                    width={200}
+                    height={70}
+                    className="object-contain"
+                  />
+                </Link>
+                <p className="text-gray-400 text-sm italic">
+                  "Geçmişten aldığımız güçle, geleceği inşa ediyoruz"
+                </p>
               </div>
 
-              {/* Sağ Bölüm - İletişim Bilgileri */}
-              <div className="md:w-1/2">
-                <h2 className="text-3xl font-bold text-white mb-6">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
-                    Bizimle İletişime Geçin
-                  </span>
-                </h2>
-                <p className="text-gray-400 mb-8 leading-relaxed">
-                  50 yılı aşkın tecrübemizle projeleriniz için en iyi çözümleri sunmaya hazırız. Uzman ekibimizle her zaman iletişim kurabilirsiniz.
-                </p>
+              {/* Hızlı Bağlantılar (Navbar Öğeleri) */}
+              <div className="flex flex-col">
+                <h3 className="text-white font-semibold text-lg mb-6">Hızlı Bağlantılar</h3>
+                <nav className="space-y-3">
+                  {[
+                    { href: "/", label: "Ana Sayfa" },
+                    { href: "/hakkinda", label: "Hakkımızda" },
+                    { href: "/kurumsal", label: "Üretim Tesisimiz" },
+                    { href: "/projelerimiz", label: "Projelerimiz" },
+                    { href: "/iletisim", label: "İletişim" },
+                  ].map(({ href, label }) => (
+                    <Link
+                      key={href}
+                      href={href}
+                      className="text-gray-400 hover:text-white transition-colors text-sm block"
+                    >
+                      {label}
+                    </Link>
+                  ))}
+                </nav>
+              </div>
 
+              {/* İletişim Bilgileri */}
+              <div className="flex flex-col">
+                <h3 className="text-white font-semibold text-lg mb-6">İletişim</h3>
                 <div className="space-y-4">
-
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mt-1">
                       <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -474,7 +490,6 @@ export default function Home() {
                       </svg>
                     </div>
                     <div className="ml-4">
-                      <h3 className="text-sm font-semibold text-white">E-posta</h3>
                       <a href="mailto:nurettintutak@hotmail.com" className="text-gray-400 hover:text-blue-400 text-sm transition-colors">
                         nurettintutak@hotmail.com
                       </a>
@@ -488,12 +503,25 @@ export default function Home() {
                       </svg>
                     </div>
                     <div className="ml-4">
-                      <h3 className="text-sm font-semibold text-white">Telefon</h3>
                       <a href="tel:+905467689992" className="text-gray-400 hover:text-blue-400 text-sm transition-colors">
                         +90 (546) 768 99 92
                       </a>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Alt Kısım - Telif Hakkı */}
+            <div className="border-t border-gray-800 mt-12 pt-8">
+              <div className="flex flex-col md:flex-row justify-between items-center">
+                <p className="text-gray-500 text-sm text-center md:text-left">
+                  © {new Date().getFullYear()} NRT Grup İnşaat ve Müteahhitlik. Tüm hakları saklıdır.
+                </p>
+                <div className="flex space-x-6 mt-4 md:mt-0">
+                  <a href="/privacy" className="text-gray-500 hover:text-white transition-colors text-sm">Gizlilik Politikası</a>
+                  <a href="/cookies" className="text-gray-500 hover:text-white transition-colors text-sm">Çerezler</a>
+                  <a href="/terms" className="text-gray-500 hover:text-white transition-colors text-sm">Şartlar</a>
                 </div>
               </div>
             </div>
