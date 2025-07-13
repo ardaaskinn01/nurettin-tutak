@@ -2,6 +2,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Navbar from "./components/Navbar";
+import TopContactBar from "./components/TopContactBar";
 import CountUp from 'react-countup';
 import { useRef } from 'react';
 import { useState, useEffect } from 'react';
@@ -113,6 +114,7 @@ export default function Home() {
       </Head>
 
       <div className="min-h-screen flex flex-col relative bg-gray-950">
+        <TopContactBar />
         <Navbar />
 
         {/* Hero Section */}

@@ -47,6 +47,7 @@ export default function Kurumsal() {
 
   return (
     <div className="min-h-screen bg-gray-900">
+      <TopContactBar />
       <Navbar />
 
       <main className="pt-32 pb-20">

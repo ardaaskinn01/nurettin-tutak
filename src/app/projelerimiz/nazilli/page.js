@@ -14,6 +14,7 @@ export default function Nazilli() {
 
   return (
     <div className="relative min-h-screen">
+      <TopContactBar />
       <Navbar />
 
       <div className="absolute top-32 left-6 z-20">

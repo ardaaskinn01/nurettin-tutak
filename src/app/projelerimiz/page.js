@@ -36,7 +36,7 @@ export default function Projeler() {
         />
         <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
       </div>
-
+      <TopContactBar />
       <Navbar />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-20">

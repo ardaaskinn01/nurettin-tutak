@@ -17,7 +17,7 @@ export default function Hakkinda() {
         <div className="absolute inset-0 bg-black opacity-65"></div>
       </div>
 
-      {/* Navbar */}
+      <TopContactBar />
       <Navbar />
 
       {/* İçerik (Blur olmayan kısım) */}

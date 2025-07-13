@@ -64,7 +64,7 @@ export default function Iletisim() {
         />
         <div className="absolute inset-0 bg-black opacity-70"></div>
       </div>
-
+      <TopContactBar />
       <Navbar />
 
       <main className="flex-grow py-32 px-4 sm:px-6 lg:px-8 relative">
