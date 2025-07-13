@@ -2,6 +2,7 @@
 import Navbar from "../../components/Navbar";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import TopContactBar from "../../components/TopContactBar";
 
 export default function Nazilli() {
   const router = useRouter();

@@ -210,7 +210,7 @@ export default function Home() {
               />
             ))}
           </div>
-       </section>
+        </section>
 
         {/* Tanıtım Videosu Section */}
         <section
@@ -225,8 +225,8 @@ export default function Home() {
             </div>
 
             <div className="aspect-w-16 aspect-h-9 w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl">
-              <video 
-                className="w-full h-full object-cover" 
+              <video
+                className="w-full h-full object-cover"
                 controls
                 poster="/video-poster.jpg" // Video ön izleme resmi
               >
@@ -239,31 +239,37 @@ export default function Home() {
 
         {/* Hizmetlerimiz Section */}
         <section
-          ref={el => sectionRefs.current[1] = el} // Ref index'ini 1 yapmayı unutmayın
-          className="py-20 bg-white opacity-0 translate-y-10 transition-all duration-500"
+          ref={el => sectionRefs.current[1] = el}
+          className="py-16 bg-white opacity-0 translate-y-10 transition-all duration-500"
         >
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-16">
-              <span className="text-xs font-semibold text-blue-600 tracking-widest uppercase">HİZMETLERİMİZ</span>
-              <h2 className="mt-4 text-3xl md:text-4xl font-bold text-gray-900">Uzmanlık Alanlarımız</h2>
-              <div className="mt-4 h-1 w-20 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto rounded-full"></div>
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-light text-gray-800">Hizmetlerimiz</h2>
+              <p className="mt-3 text-gray-500 max-w-2xl mx-auto">50 yıllık uzmanlıkla sunduğumuz profesyonel çözümler</p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 gap-8">
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="group bg-white p-8 rounded-xl border border-gray-200 hover:border-blue-500 transition-all duration-300 hover:shadow-xl"
+                  className="group relative overflow-hidden p-6 rounded-lg"
                 >
-                  <div className="flex items-start mb-5">
-                    <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mr-4 group-hover:bg-blue-200 transition-colors">
-                      <span className="text-blue-600 font-bold">{index + 1}</span>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">{service.title}</h3>
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center">
+                          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-medium text-gray-900">{service.title}</h3>
+                        <p className="mt-2 text-gray-600 leading-relaxed">{service.description}</p>
+                      </div>
                     </div>
                   </div>
-                  <p className="text-gray-600 leading-relaxed">{service.description}</p>
                 </div>
               ))}
             </div>
@@ -273,32 +279,31 @@ export default function Home() {
         {/* Neden Bizi Seçmelisiniz Section */}
         <section
           ref={el => sectionRefs.current[2] = el}
-          className="py-20 bg-gray-50 opacity-0 translate-y-10 transition-all duration-500"
+          className="py-16 bg-gray-50 opacity-0 translate-y-10 transition-all duration-500"
         >
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="text-center mb-16">
-              <span className="text-xs font-semibold text-blue-600 tracking-widest uppercase">AVANTAJLARIMIZ</span>
-              <h2 className="mt-4 text-3xl md:text-4xl font-bold text-gray-900">Neden NRT Grup?</h2>
-              <div className="mt-4 h-1 w-20 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto rounded-full"></div>
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-light text-gray-800">Neden NRT Grup?</h2>
+              <p className="mt-3 text-gray-500 max-w-2xl mx-auto">Tecrübemiz ve kalite anlayışımızla fark yaratıyoruz</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {reasons.map((reason, index) => (
                 <div
                   key={index}
-                  className="group bg-white p-8 rounded-xl border border-gray-200 hover:border-blue-500 transition-all duration-300 hover:shadow-lg"
+                  className="bg-white p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300"
                 >
-                  <div className="flex items-center mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center mr-4 group-hover:bg-blue-200 transition-colors">
-                      <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  <div className="flex items-start">
+                    <div className="mr-4 text-blue-600">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">{reason.title}</h3>
+                    <div>
+                      <h3 className="text-lg font-medium text-gray-900 mb-2">{reason.title}</h3>
+                      <p className="text-gray-600 text-sm">{reason.description}</p>
+                    </div>
                   </div>
-                  {reason.description && (
-                    <p className="text-gray-600 text-sm leading-relaxed">{reason.description}</p>
-                  )}
                 </div>
               ))}
             </div>

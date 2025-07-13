@@ -1,5 +1,6 @@
 "use client";
 import Navbar from "../../components/Navbar";
+import TopContactBar from "../../components/TopContactBar";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 

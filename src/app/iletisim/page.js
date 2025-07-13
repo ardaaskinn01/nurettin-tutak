@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Navbar from "../components/Navbar";
+import TopContactBar from "../components/TopContactBar";
 import Image from "next/image";
 
 export default function Iletisim() {

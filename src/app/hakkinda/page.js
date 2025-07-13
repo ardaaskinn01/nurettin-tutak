@@ -1,5 +1,6 @@
 "use client";
 import Navbar from "../components/Navbar";
+import TopContactBar from "../components/TopContactBar";
 import Image from "next/image";
 
 export default function Hakkinda() {

@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Image from "next/image";
+import TopContactBar from "../components/TopContactBar";
 
 export default function Kurumsal() {
   const images = Array.from({ length: 19 }, (_, i) => `/fabrika/${i}.jpg`);
