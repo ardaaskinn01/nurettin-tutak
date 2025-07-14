@@ -370,17 +370,14 @@ export default function Home() {
                 {
                   title: "TAVŞANLI / KÜTAHYA",
                   link: "/projelerimiz/tavsanli",
-                  description: "Endüstriyel tesis projesi"
                 },
                 {
                   title: "NAZİLLİ / AYDIN",
                   link: "/projelerimiz/nazilli",
-                  description: "Kamu binası restorasyonu"
                 },
                 {
                   title: "KARABURUN / İZMİR",
                   link: "/projelerimiz/karaburun",
-                  description: "Lüks rezidans kompleksi"
                 }
               ].map((project, index) => (
                 <div key={index} className="group">
@@ -389,7 +386,6 @@ export default function Home() {
                       <div className="mb-4 flex justify-between items-start">
                         <h3 className="text-lg font-medium text-gray-800">{project.title}</h3>
                       </div>
-                      <p className="text-gray-600 text-sm mb-4">{project.description}</p>
                       <div className="text-blue-600 text-sm font-medium flex items-center mt-auto pt-4 border-t border-gray-100 group-hover:border-gray-200 transition-colors">
                         Proje detayları
                         <svg className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
