@@ -39,7 +39,7 @@ export default function Hakkinda() {
               2000 yılı itibarıyla, ikinci kuşak temsilcimiz Nurettin Tutak liderliğinde önemli bir vizyon değişimi yaşanmış; şirket yalnızca PVC ve cam üretimiyle sınırlı kalmayıp inşaat, müteahhitlik, taşımacılık, otomotiv alım satımı, araç kiralama ve devlet ihaleleri gibi farklı alanlara da açılmıştır. Türkiye'nin 81 iline yayılan hizmet ağıyla büyük ölçekli projelere ve güçlü iş ortaklıklarına imza atılmıştır.
             </p>
             <p>
-              Bu süreçte kurulan NRT İnşaat A.Ş., tek ortaklı bir yapı olarak Nurettin Tutak öncülüğünde; kentsel dönüşüm projeleri, konut ve villa inşaatları üzerine uzmanlaşmıştır. Şu anda Aydın Nazilli'de hayata geçirilen 90 villalık proje, modern mimari anlayışı ve yüksek yapı kalitesi ile bölgeye değer katmaktadır. Aynı zamanda Kuşadası, Çeşme, Urla ve Çiğli gibi bölgelerde taşeronluk inşaat faaliyetleriyle aktif olarak yer almaktadır.
+              Bu süreçte kurulan NRT Grup İnşaat A.Ş., tek ortaklı bir yapı olarak Nurettin Tutak öncülüğünde; kentsel dönüşüm projeleri, konut ve villa inşaatları üzerine uzmanlaşmıştır. Şu anda Aydın Nazilli'de hayata geçirilen 90 villalık proje, modern mimari anlayışı ve yüksek yapı kalitesi ile bölgeye değer katmaktadır. Aynı zamanda Kuşadası, Çeşme, Urla ve Çiğli gibi bölgelerde taşeronluk inşaat faaliyetleriyle aktif olarak yer almaktadır.
             </p>
             <p>
               Genişleyen faaliyet alanlarımız doğrultusunda şirketimiz, taşımacılık ve araç kiralama hizmetlerini de başarıyla sürdürmektedir. Almanya, Kıbrıs, Bodrum ve İzmir merkezli organizasyonumuzla, makam araçları da dahil olmak üzere toplam 950 araçlık filomuz, bireysel ve kurumsal müşterilere güvenli ve konforlu çözümler sunmaktadır.
@@ -128,7 +128,7 @@ export default function Hakkinda() {
                 </div>
                 <div className="bg-gray-900/80 border border-gray-700 rounded-xl p-6 w-full backdrop-blur-sm">
                   <h3 className="text-2xl font-bold text-white mb-1">Nurettin Tutak</h3>
-                  <p className="text-blue-400 font-medium">NRT İnşaat A.Ş. Yönetim Kurulu Başkanı</p>
+                  <p className="text-blue-400 font-medium">NRT Grup İnşaat A.Ş. Yönetim Kurulu Başkanı</p>
                   <div className="mt-4 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50"></div>
                 </div>
               </div>
