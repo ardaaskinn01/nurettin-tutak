@@ -1,10 +1,11 @@
 "use client";
 import Navbar from "../../components/Navbar";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 import TopContactBar from "../../components/TopContactBar";
+import Link from "next/link";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
-export default function Nazilli() {
+export default function Karaburun() {
   const router = useRouter();
   const projects = [
     { title: "Karaburun", link: "/projelerimiz/karaburun/villa", villas: 12 },
@@ -18,47 +19,64 @@ export default function Nazilli() {
       <div className="absolute top-32 left-6 z-20">
         <button
           onClick={() => router.back()}
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-600"
+          className="flex items-center gap-2 bg-white bg-opacity-20 backdrop-blur-sm px-4 py-2 rounded-lg text-white hover:bg-opacity-30 transition-all border border-white border-opacity-20"
         >
-          ← Geri
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Geri Dön
         </button>
       </div>
 
       {/* Arkaplan */}
-      <div
-        className="absolute inset-0 bg-cover bg-fixed bg-center"
-        style={{
-          backgroundImage: "url('/bg.jpg')",
-        }}
-      />
+      <div className="absolute inset-0">
+        <Image
+          src="/bg.jpg"
+          alt="Background"
+          fill
+          className="object-cover"
+          quality={100}
+        />
+        <div className="absolute inset-0 bg-black opacity-70" />
+      </div>
 
-      {/* Arkaplan karartması */}
-      <div className="absolute inset-0 bg-black opacity-70" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-44 pb-12">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-semibold text-white">KARABURUN / İZMİR</h2>
-          <div className="mt-3 h-1 w-16 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto"></div>
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-40 pb-20">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-light text-white mb-4">KARABURUN / İZMİR</h2>
+          <div className="w-24 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto"></div>
+          <p className="mt-6 text-gray-300 max-w-2xl mx-auto">
+            Eşsiz manzaralı lüks villa projemiz
+          </p>
         </div>
 
-        {/* Kartlar */}
-        <div className="flex flex-col items-center gap-8">
-          {projects.map((project, index) => (
-            <Link
-              href={project.link}
-              key={index}
-              className="group relative overflow-hidden rounded-lg border-l-4 border-blue-500 w-full max-w-2xl h-28 bg-white bg-opacity-80 transition-transform duration-300 hover:scale-105 shadow-xl"
-            >
-              <div className="flex flex-col justify-center items-center h-full">
-                <span className="text-blue-500 text-xl uppercase font-semibold">
-                  {project.title}
-                </span>
-                <span className="text-gray-600 text-sm font-light mt-1">
-                  {project.villas} Villa
-                </span>
-              </div>
-            </Link>
-          ))}
+        {/* Kart Düzeni - Tek proje olduğu için flex ile ortalandı */}
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 max-w-2xl w-full">
+            {projects.map((project, index) => (
+              <Link
+                href={project.link}
+                key={index}
+                className="group relative overflow-hidden rounded-xl bg-white bg-opacity-5 backdrop-blur-sm border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:bg-opacity-10 h-40 flex flex-col items-center justify-center"
+              >
+                <div className="text-center px-6 py-4">
+                  <h3 className="text-2xl font-medium text-white group-hover:text-blue-400 transition-colors">
+                    {project.title}
+                  </h3>
+                  <div className="mt-2 text-blue-300 text-lg font-light">
+                    {project.villas} Villa
+                  </div>
+                  <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="inline-flex items-center text-sm text-blue-400">
+                      Proje Detayları
+                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </div>
