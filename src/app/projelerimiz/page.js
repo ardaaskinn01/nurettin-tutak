@@ -21,6 +21,11 @@ export default function Projeler() {
       link: "/projelerimiz/karaburun",
       description: "Deniz manzaralı premium villalar",
     },
+    {
+      title: "Ulucak / İzmir",
+      link: "/projelerimiz/ulucak",
+      description: "Güleç İnşaat'a ait Ulucak Projeleri",
+    },
   ];
 
   return (

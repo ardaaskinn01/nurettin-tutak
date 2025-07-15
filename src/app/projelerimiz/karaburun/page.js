@@ -56,7 +56,7 @@ export default function Karaburun() {
               <Link
                 href={project.link}
                 key={index}
-                className="group relative overflow-hidden rounded-xl bg-white bg-opacity-5 backdrop-blur-sm border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:bg-opacity-10 h-40 flex flex-col items-center justify-center"
+                className="group relative overflow-hidden rounded-xl bg-white bg-opacity-15 backdrop-blur-sm border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:bg-opacity-10 h-40 flex flex-col items-center justify-center"
               >
                 <div className="text-center px-6 py-4">
                   <h3 className="text-2xl font-medium text-white group-hover:text-blue-400 transition-colors">

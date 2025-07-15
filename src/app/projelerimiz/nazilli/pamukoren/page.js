@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Navbar from "../../../components/Navbar";
+import TopContactBar from "../../../components/TopContactBar";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -13,6 +14,7 @@ export default function Ocakli() {
 
     return (
         <div className="bg-gradient-to-r from-green-800 to-gray-800 min-h-screen">
+            <TopContactBar />
             <Navbar />
             <div className="absolute top-32 left-6 z-10">
                 <button
