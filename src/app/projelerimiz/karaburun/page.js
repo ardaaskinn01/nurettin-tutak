@@ -40,7 +40,7 @@ export default function Karaburun() {
         <div className="absolute inset-0 bg-black opacity-70" />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-40 pb-20">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-44 pb-20">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-light text-white mb-4">KARABURUN / İZMİR</h2>
           <div className="w-24 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto"></div>
