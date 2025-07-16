@@ -8,6 +8,14 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(false);
+  const [openSubmenus, setOpenSubmenus] = useState({});
+
+  const toggleSubmenu = (label) => {
+    setOpenSubmenus((prev) => ({
+      ...prev,
+      [label]: !prev[label],
+    }));
+  };
 
   const isActive = (href) =>
     pathname === href || (href === "/projelerimiz" && pathname.startsWith("/projelerimiz"));
@@ -129,12 +137,13 @@ export default function Navbar() {
                 item.submenu ? (
                   <div key={idx} className="px-2">
                     <button
-                      className="w-full text-left flex items-center justify-between px-4 py-3 text-gray-100 hover:text-white hover:bg-blue-800/30 rounded-md transition"
-                      onClick={() => setSubmenuOpen(!submenuOpen)}
+                      className="w-full flex items-center justify-between px-4 py-3 text-[15px] text-gray-100 hover:text-white hover:bg-blue-800/30 rounded-md transition"
+                      onClick={() => toggleSubmenu(item.label)}
                     >
                       <span>{item.label}</span>
                       <svg
-                        className={`w-4 h-4 transition-transform duration-300 ${submenuOpen ? "rotate-180" : "rotate-0"}`}
+                        className={`w-4 h-4 transition-transform duration-300 ${openSubmenus[item.label] ? "rotate-180" : "rotate-0"
+                          }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -142,13 +151,13 @@ export default function Navbar() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
                     </button>
-                    {submenuOpen && (
+                    {openSubmenus[item.label] && (
                       <div className="ml-4 mt-1 space-y-1">
                         {item.submenu.map((sub, i) => (
                           <Link
                             key={i}
                             href={sub.href}
-                            className="block px-4 py-2 text-sm text-white hover:text-white hover:bg-blue-800/40 rounded-md transition"
+                            className="block px-4 py-2 text-sm text-white hover:bg-blue-800/40 rounded-md transition"
                             onClick={() => setIsMenuOpen(false)}
                           >
                             {sub.label}
@@ -174,6 +183,7 @@ export default function Navbar() {
             </div>
           </div>
         )}
+
       </div>
     </nav>
   );
