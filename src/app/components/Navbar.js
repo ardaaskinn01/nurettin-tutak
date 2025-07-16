@@ -128,31 +128,41 @@ export default function Navbar() {
                 item.submenu ? (
                   <div key={idx} className="px-2">
                     <button
-                      className="w-full text-left px-4 py-3 text-gray-100 hover:text-white hover:bg-blue-800/30 rounded-md transition"
-                      onClick={() => setIsMenuOpen((prev) => !prev)}
+                      className="w-full text-left flex items-center justify-between px-4 py-3 text-gray-100 hover:text-white hover:bg-blue-800/30 rounded-md transition"
+                      onClick={() => setSubmenuOpen(!submenuOpen)}
                     >
-                      {item.label}
+                      <span>{item.label}</span>
+                      <svg
+                        className={`w-4 h-4 transition-transform duration-300 ${submenuOpen ? "rotate-180" : "rotate-0"}`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
                     </button>
-                    <div className="ml-4">
-                      {item.submenu.map((sub, i) => (
-                        <Link
-                          key={i}
-                          href={sub.href}
-                          className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-blue-800/20 rounded-md transition"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          {sub.label}
-                        </Link>
-                      ))}
-                    </div>
+                    {submenuOpen && (
+                      <div className="ml-4 mt-1 space-y-1">
+                        {item.submenu.map((sub, i) => (
+                          <Link
+                            key={i}
+                            href={sub.href}
+                            className="block px-4 py-2 text-sm text-white hover:text-white hover:bg-blue-800/40 rounded-md transition"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ) : (
                   <Link
                     key={item.href}
                     href={item.href}
                     className={`block px-4 py-3 rounded-md text-[15px] ${isActive(item.href)
-                      ? "text-white font-semibold bg-blue-700/30"
-                      : "text-gray-100 hover:text-white hover:bg-blue-700/20"
+                        ? "text-white font-semibold bg-blue-700/30"
+                        : "text-gray-100 hover:text-white hover:bg-blue-700/20"
                       } transition-all duration-200`}
                     onClick={() => setIsMenuOpen(false)}
                   >
