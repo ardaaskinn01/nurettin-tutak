@@ -20,7 +20,7 @@ export default function Navbar() {
   const inactiveLinkUnderline =
     "after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-white group-hover:after:w-4/5 group-hover:after:scale-x-100 after:origin-center after:transition-all after:duration-300";
 
-    return (
+  return (
     <nav className="fixed top-6 w-full z-50 bg-gradient-to-r from-blue-950 to-blue-800 backdrop-blur-md backdrop-saturate-150 border-b border-blue-800/50 shadow-lg">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-24">
@@ -42,20 +42,51 @@ export default function Navbar() {
             {[
               { href: "/", label: "Ana Sayfa" },
               { href: "/hakkinda", label: "Hakkında" },
-              { href: "/kurumsal", label: "Üretim Tesisimiz" },
+              {
+                label: "Kurumsal",
+                submenu: [
+                  { href: "/kurumsal/uretim", label: "Üretim Tesisimiz" },
+                  { href: "/kurumsal/kereste", label: "Yıkama / Kereste İmalatı" },
+                  { href: "/kurumsal/misafirhane", label: "Yönetim Kurulu Misafirhanesi" },
+                ],
+              },
               { href: "/projelerimiz", label: "Projelerimiz" },
               { href: "/iletisim", label: "İletişim" },
-            ].map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                className={`${linkBaseClass} ${
-                  isActive(href) ? activeLinkClass : inactiveLinkUnderline
-                }`}
-              >
-                {label}
-              </Link>
-            ))}
+            ].map((item, idx) =>
+              item.submenu ? (
+                <div key={idx} className="relative group">
+                  <button
+                    className={`${linkBaseClass} flex items-center gap-1 ${pathname.startsWith("/kurumsal") ? activeLinkClass : inactiveLinkUnderline}`}
+                  >
+                    {item.label}
+                    <svg className="w-3 h-3 text-gray-300 group-hover:text-white transition-all duration-300" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.084l3.71-3.855a.75.75 0 111.08 1.04l-4.24 4.4a.75.75 0 01-1.08 0l-4.25-4.4a.75.75 0 01.02-1.06z" clipRule="evenodd" />
+                    </svg>
+                  </button>
+                  <div className="absolute left-0 mt-2 w-56 bg-gray-300 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-1 transition-all duration-300 z-50">
+                    {item.submenu.map((sub, i) => (
+                      <Link
+                        key={i}
+                        href={sub.href}
+                        className="block px-4 py-2 text-sm text-black hover:bg-blue-800/70 hover:text-white transition-all"
+                      >
+                        {sub.label}
+                      </Link>
+
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`${linkBaseClass} ${isActive(item.href) ? activeLinkClass : inactiveLinkUnderline
+                    }`}
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
           </div>
 
           {/* Mobil Menü Butonu */}
@@ -83,23 +114,52 @@ export default function Navbar() {
               {[
                 { href: "/", label: "Ana Sayfa" },
                 { href: "/hakkinda", label: "Hakkında" },
-                { href: "/kurumsal", label: "Üretim Tesisimiz" },
+                {
+                  label: "Kurumsal",
+                  submenu: [
+                    { href: "/kurumsal/uretim", label: "Üretim Tesisimiz" },
+                    { href: "/kurumsal/kereste", label: "Yıkama / Kereste İmalatı" },
+                    { href: "/kurumsal/misafirhane", label: "Yönetim Kurulu Misafirhanesi" },
+                  ],
+                },
                 { href: "/projelerimiz", label: "Projelerimiz" },
                 { href: "/iletisim", label: "İletişim" },
-              ].map(({ href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className={`block px-4 py-3 rounded-md text-[15px] ${
-                    isActive(href)
+              ].map((item, idx) =>
+                item.submenu ? (
+                  <div key={idx} className="px-2">
+                    <button
+                      className="w-full text-left px-4 py-3 text-gray-100 hover:text-white hover:bg-blue-800/30 rounded-md transition"
+                      onClick={() => setIsMenuOpen((prev) => !prev)}
+                    >
+                      {item.label}
+                    </button>
+                    <div className="ml-4">
+                      {item.submenu.map((sub, i) => (
+                        <Link
+                          key={i}
+                          href={sub.href}
+                          className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-blue-800/20 rounded-md transition"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`block px-4 py-3 rounded-md text-[15px] ${isActive(item.href)
                       ? "text-white font-semibold bg-blue-700/30"
                       : "text-gray-100 hover:text-white hover:bg-blue-700/20"
-                  } transition-all duration-200`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {label}
-                </Link>
-              ))}
+                      } transition-all duration-200`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                )
+              )}
             </div>
           </div>
         )}

@@ -8,9 +8,7 @@ import { useRouter } from "next/navigation";
 export default function Ulucak() {
   const router = useRouter();
   const projects = [
-    { title: "Yıkama / Kereste İmalatı", link: "/projelerimiz/ulucak/imalat" },
     { title: "Ulucak Merkez İnşaatlar", link: "/projelerimiz/ulucak/insaat" },
-    { title: "Yönetim Kurulu Misafirhanesi", link: "/projelerimiz/ulucak/misafirhane" },
   ];
 
   return (
