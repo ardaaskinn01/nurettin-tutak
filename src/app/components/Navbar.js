@@ -7,6 +7,7 @@ import Image from "next/image";
 export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [submenuOpen, setSubmenuOpen] = useState(false);
 
   const isActive = (href) =>
     pathname === href || (href === "/projelerimiz" && pathname.startsWith("/projelerimiz"));
