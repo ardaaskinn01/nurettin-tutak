@@ -8,14 +8,6 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(false);
-  const [openSubmenus, setOpenSubmenus] = useState({});
-
-  const toggleSubmenu = (label) => {
-    setOpenSubmenus((prev) => ({
-      ...prev,
-      [label]: !prev[label],
-    }));
-  };
 
   const isActive = (href) =>
     pathname === href || (href === "/projelerimiz" && pathname.startsWith("/projelerimiz"));
@@ -81,7 +73,6 @@ export default function Navbar() {
                       >
                         {sub.label}
                       </Link>
-
                     ))}
                   </div>
                 </div>
@@ -89,8 +80,7 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`${linkBaseClass} ${isActive(item.href) ? activeLinkClass : inactiveLinkUnderline
-                    }`}
+                  className={`${linkBaseClass} ${isActive(item.href) ? activeLinkClass : inactiveLinkUnderline}`}
                 >
                   {item.label}
                 </Link>
@@ -119,7 +109,7 @@ export default function Navbar() {
         {/* Mobil Menü İçeriği */}
         {isMenuOpen && (
           <div className="md:hidden bg-blue-900/95 backdrop-blur-lg border-t border-blue-800/50">
-            <div className="px-2 py-2 space-y-1">
+            <div className="space-y-1">
               {[
                 { href: "/", label: "Ana Sayfa" },
                 { href: "/hakkinda", label: "Hakkında" },
@@ -135,15 +125,14 @@ export default function Navbar() {
                 { href: "/iletisim", label: "İletişim" },
               ].map((item, idx) =>
                 item.submenu ? (
-                  <div key={idx} className="px-2">
+                  <div key={idx} className="border-b border-blue-800/50">
                     <button
-                      className="w-full flex items-center justify-between px-4 py-3 text-[15px] text-gray-100 hover:text-white hover:bg-blue-800/30 rounded-md transition"
-                      onClick={() => toggleSubmenu(item.label)}
+                      className="w-full text-left flex items-center justify-between px-6 py-4 text-gray-100 hover:text-white hover:bg-blue-800/30 transition"
+                      onClick={() => setSubmenuOpen(!submenuOpen)}
                     >
-                      <span>{item.label}</span>
+                      <span className="text-[15px] font-medium">{item.label}</span>
                       <svg
-                        className={`w-4 h-4 transition-transform duration-300 ${openSubmenus[item.label] ? "rotate-180" : "rotate-0"
-                          }`}
+                        className={`w-4 h-4 transition-transform duration-300 ${submenuOpen ? "rotate-180" : "rotate-0"}`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -151,13 +140,13 @@ export default function Navbar() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
                     </button>
-                    {openSubmenus[item.label] && (
-                      <div className="ml-4 mt-1 space-y-1">
+                    {submenuOpen && (
+                      <div className="bg-blue-800/20">
                         {item.submenu.map((sub, i) => (
                           <Link
                             key={i}
                             href={sub.href}
-                            className="block px-4 py-2 text-sm text-white hover:bg-blue-800/40 rounded-md transition"
+                            className="block px-8 py-3 text-sm text-white hover:text-white hover:bg-blue-800/40 transition"
                             onClick={() => setIsMenuOpen(false)}
                           >
                             {sub.label}
@@ -170,10 +159,10 @@ export default function Navbar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`block px-4 py-3 rounded-md text-[15px] ${isActive(item.href)
-                        ? "text-white font-semibold bg-blue-700/30"
+                    className={`block px-6 py-4 border-b border-blue-800/50 text-[15px] font-medium ${isActive(item.href)
+                        ? "text-white bg-blue-700/30"
                         : "text-gray-100 hover:text-white hover:bg-blue-700/20"
-                      } transition-all duration-200`}
+                      } transition`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
@@ -183,7 +172,6 @@ export default function Navbar() {
             </div>
           </div>
         )}
-
       </div>
     </nav>
   );
