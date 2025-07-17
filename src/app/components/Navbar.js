@@ -7,7 +7,14 @@ import Image from "next/image";
 export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [submenuOpen, setSubmenuOpen] = useState(false);
+  const [submenuOpen, setSubmenuOpen] = useState({});
+  
+  const toggleSubmenu = (label) => {
+    setSubmenuOpen((prev) => ({
+      ...prev,
+      [label]: !prev[label],
+    }));
+  };
 
   const isActive = (href) =>
     pathname === href || (href === "/projelerimiz" && pathname.startsWith("/projelerimiz"));
@@ -42,7 +49,15 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-1">
             {[
               { href: "/", label: "Ana Sayfa" },
-              { href: "/hakkinda", label: "Hakkında" },
+              {
+                label: "Hakkında",
+                submenu: [
+                  { href: "/hakkinda/genel", label: "Genel Bilgi" },
+                  { href: "/hakkinda/misyon", label: "Misyonumuz" },
+                  { href: "/hakkinda/vizyon", label: "Vizyonumuz" },
+                  { href: "/hakkinda/yonetim", label: "Yönetim Kurulu" },
+                ],
+              },
               {
                 label: "Kurumsal",
                 submenu: [
@@ -57,7 +72,11 @@ export default function Navbar() {
               item.submenu ? (
                 <div key={idx} className="relative group">
                   <button
-                    className={`${linkBaseClass} flex items-center gap-1 ${pathname.startsWith("/kurumsal") ? activeLinkClass : inactiveLinkUnderline}`}
+                    className={`${linkBaseClass} flex items-center gap-1 ${
+                      pathname.startsWith(`/${item.label.toLowerCase()}`) 
+                        ? activeLinkClass 
+                        : inactiveLinkUnderline
+                    }`}
                   >
                     {item.label}
                     <svg className="w-3 h-3 text-gray-300 group-hover:text-white transition-all duration-300" fill="currentColor" viewBox="0 0 20 20">
@@ -80,7 +99,9 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`${linkBaseClass} ${isActive(item.href) ? activeLinkClass : inactiveLinkUnderline}`}
+                  className={`${linkBaseClass} ${
+                    isActive(item.href) ? activeLinkClass : inactiveLinkUnderline
+                  }`}
                 >
                   {item.label}
                 </Link>
@@ -112,7 +133,15 @@ export default function Navbar() {
             <div className="space-y-1">
               {[
                 { href: "/", label: "Ana Sayfa" },
-                { href: "/hakkinda", label: "Hakkında" },
+                {
+                  label: "Hakkında",
+                  submenu: [
+                    { href: "/hakkinda/genel", label: "Genel Bilgi" },
+                    { href: "/hakkinda/misyon", label: "Misyonumuz" },
+                    { href: "/hakkinda/vizyon", label: "Vizyonumuz" },
+                    { href: "/hakkinda/yonetim", label: "Yönetim Kurulu" },
+                  ],
+                },
                 {
                   label: "Kurumsal",
                   submenu: [
@@ -128,11 +157,13 @@ export default function Navbar() {
                   <div key={idx} className="border-b border-blue-800/50">
                     <button
                       className="w-full text-left flex items-center justify-between px-6 py-4 text-gray-100 hover:text-white hover:bg-blue-800/30 transition"
-                      onClick={() => setSubmenuOpen(!submenuOpen)}
+                      onClick={() => toggleSubmenu(item.label)}
                     >
                       <span className="text-[15px] font-medium">{item.label}</span>
                       <svg
-                        className={`w-4 h-4 transition-transform duration-300 ${submenuOpen ? "rotate-180" : "rotate-0"}`}
+                        className={`w-4 h-4 transition-transform duration-300 ${
+                          submenuOpen[item.label] ? "rotate-180" : "rotate-0"
+                        }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -140,7 +171,8 @@ export default function Navbar() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
                     </button>
-                    {submenuOpen && (
+
+                    {submenuOpen[item.label] && (
                       <div className="bg-blue-800/20">
                         {item.submenu.map((sub, i) => (
                           <Link
@@ -159,10 +191,11 @@ export default function Navbar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`block px-6 py-4 border-b border-blue-800/50 text-[15px] font-medium ${isActive(item.href)
+                    className={`block px-6 py-4 border-b border-blue-800/50 text-[15px] font-medium ${
+                      isActive(item.href)
                         ? "text-white bg-blue-700/30"
                         : "text-gray-100 hover:text-white hover:bg-blue-700/20"
-                      } transition`}
+                    } transition`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}

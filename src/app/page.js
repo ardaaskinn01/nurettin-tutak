@@ -360,7 +360,7 @@ export default function Home() {
           <div className="relative z-10 max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <span className="text-2xl font-semibold text-gray-800 tracking-widest uppercase">REFERANSLARIMIZ</span>
-              <h2 className="mt-4 text-md md:text-md font-light text-gray-500">Gerçekleştirdiğimiz Projeler</h2>
+              <h2 className="mt-4 text-md md:text-md font-light text-gray-500">Gerçekleştirdiğimiz Son Projeler</h2>
               <div className="mt-6 h-px w-24 bg-gray-300 mx-auto"></div>
             </div>
 
@@ -368,7 +368,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  title: "Ulucak / İZMİR",
+                  title: "ULUCAK / İZMİR",
                   link: "/projelerimiz/ulucak",
                 },
                 {
