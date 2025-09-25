@@ -30,6 +30,12 @@ export default function Projeler() {
       description: "Güleç İnşaat'a ait Ulucak Projeleri",
       image: "/insaat/(4).jpeg",
     },
+    {
+      title: "Karşıyaka / İzmir",
+      link: "/projelerimiz/karsiyaka",
+      description: "İzmir Karşıyaka'da benzersiz daire ve dükkan projesi",
+      image: "/karsiyaka/(7).jpeg",
+    },
   ];
 
   return (

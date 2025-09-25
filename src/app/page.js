@@ -372,8 +372,8 @@ export default function Home() {
                   link: "/projelerimiz/ulucak",
                 },
                 {
-                  title: "NAZİLLİ / AYDIN",
-                  link: "/projelerimiz/nazilli",
+                  title: "KARŞIYAKA / İZMİR",
+                  link: "/projelerimiz/karsiyaka",
                 },
                 {
                   title: "KARABURUN / İZMİR",
